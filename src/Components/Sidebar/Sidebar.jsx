@@ -1,0 +1,51 @@
+import React from "react";
+import { 
+    FiHome, FiGrid, FiClock, FiFileText, FiTarget, FiCalendar, FiShoppingBag, FiBox, FiFilm, FiLayers, FiTable, FiCreditCard   } from "react-icons/fi";
+const Sidebar = () => {
+  const menuItems = [
+    { icon: <FiHome />, label: "Dashboard" },
+    { icon: <FiGrid />, label: "Apps" },
+    { icon: <FiClock />, label: "UI Kits" },
+    { icon: <FiFileText />, label: "Forms" },
+    { icon: <FiTarget />, label: "Board" },
+    { icon: <FiCalendar />, label: "Calendar" },
+    { icon: <FiShoppingBag />, label: "Products" },
+    { icon: <FiBox />, label: "Icons" },
+    { icon: <FiFilm />, label: "Animations" },
+    { icon: <FiLayers />, label: "Components" },
+    { icon: <FiTable />, label: "Table" },
+    { icon: <FiCreditCard />, label: "Cards" },
+  ];
+
+  return (
+    <div className="h-screen w-64 bg-white shadow-md fixed top-0 left-0 overflow-y-auto">
+      <div className="flex items-center justify-center py-6 border-b border-gray-200">
+        <img
+          src="https://images.pexels.com/photos/15447422/pexels-photo-15447422/free-photo-of-drone-shot-of-city-at-sunset.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="Logo"
+          className="h-8"
+        />
+      </div>
+
+      {/* Menu Items */}
+      <div className="p-4">
+        {menuItems.map((item, index) => (
+          <div
+            key={index}
+            className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-100 cursor-pointer"
+          >
+            <div className="flex items-center">
+              <span className="text-green-500 text-xl">{item.icon}</span>
+              <span className="ml-4 text-gray-700 text-sm font-medium">
+                {item.label}
+              </span>
+            </div>
+            
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;
