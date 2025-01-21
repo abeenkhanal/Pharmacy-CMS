@@ -32,13 +32,10 @@ const Hero = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden">
-        {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
-          <h1 className="text-3xl font-bold">CMS Dashboard</h1>
+          <h1 className="text-3xl font-bold">Hero Section</h1>
           <p className="mt-2 text-sm">Edit the hero section content below</p>
         </div>
-
-        {/* Form Section */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">
             Edit Content
@@ -74,20 +71,8 @@ const Hero = () => {
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
-                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+                className="block w-60 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
               />
-              {formData.image && (
-                <img
-                  src={formData.image}
-                  alt="Preview"
-                  className="mt-4 rounded-lg shadow-md"
-                  style={{
-                    width: "200px", // Set a fixed width
-                    height: "auto", // Maintain aspect ratio
-                    objectFit: "cover", // Crop image if necessary
-                  }}
-                />
-              )}
             </div>
             <div className="text-left">
               <button
@@ -99,6 +84,68 @@ const Hero = () => {
               </button>
             </div>
           </form>
+        </div>
+        <div className="p-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">
+            Manage Posts
+          </h2>
+          <table className="table-auto w-full border-collapse border border-gray-300 rounded-lg shadow-lg">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-300 px-4 py-2 text-left">Title</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Subtitle</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Image</th>
+                <th className="border border-gray-300 px-4 py-2 text-left">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Your Global Education Partner for Visa Success
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Guiding you through every step of the process—student visas, test preparation, and
+                  beyond
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <img
+                    src="https://via.placeholder.com/100"
+                    alt="Preview"
+                    className="w-20 h-20 object-cover rounded-lg shadow-md"
+                  />
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow hover:bg-yellow-600 transition duration-200">
+                    Edit
+                  </button>
+                  <button className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition duration-200 ml-2">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">Another Example Title</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Another example subtitle for testing the layout
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <img
+                    src="https://via.placeholder.com/100"
+                    alt="Preview"
+                    className="w-20 h-20 object-cover rounded-lg shadow-md"
+                  />
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  <button className="bg-yellow-500 text-white px-4 py-2 rounded-lg shadow hover:bg-yellow-600 transition duration-200">
+                    Edit
+                  </button>
+                  <button className="bg-red-500 text-white px-4 py-2 rounded-lg shadow hover:bg-red-600 transition duration-200 ml-2">
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

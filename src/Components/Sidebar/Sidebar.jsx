@@ -29,7 +29,7 @@ const Sidebar = () => {
               key={index}
               to={item.path}
               onClick={() => setActiveItem(index)}
-              className={classes} // Dynamic classes applied here
+              className={classes} 
             >
               <span className="text-green-500 text-xl">{item.icon}</span>
               <span className="ml-4 text-gray-700 text-sm font-medium">
