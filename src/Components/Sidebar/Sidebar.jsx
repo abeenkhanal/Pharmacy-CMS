@@ -1,22 +1,33 @@
-import { FiHome, FiGrid } from "react-icons/fi";
+import { FiHome, FiGrid, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const menuItems = [
   { icon: <FiHome />, label: "Dashboard", path: "/" },
   { icon: <FiGrid />, label: "Hero", path: "/hero" },
   { icon: <FiGrid />, label: "Home Banner", path: "/banner" },
-  { icon: <FiGrid />, label: "Revolutionize ", path: "/revolutionize" },
-  { icon: <FiGrid />, label: "Features ", path: "/features" },
-  { icon: <FiGrid />, label: "Page Layout", path: "/pagelayout" },
+  { icon: <FiGrid />, label: "Revolutionize", path: "/revolutionize" },
+  { icon: <FiGrid />, label: "Features", path: "/features" },
+];
+
+const pageLayoutSubItems = [
+  { label: "Features", path: "/pagelayout/features" },
+  { label: "Footer", path: "/pagelayout/footer" },
+  { label: "Sidebar", path: "/pagelayout/sidebar" },
 ];
 
 const Sidebar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+ 
   return (
     <div className="h-screen w-64 bg-white shadow-md fixed top-0 left-0 overflow-y-auto z-40">
       <div className="flex items-center justify-center py-6 border-b border-gray-200">
         <img src="" alt="Logo" className="h-8" />
       </div>
-
       <div className="p-4">
         {menuItems.map((item, i) => (
           <Link
@@ -30,6 +41,37 @@ const Sidebar = () => {
             </span>
           </Link>
         ))}
+
+        {/* Page Layout with Dropdown */}
+        <div className="mt-4">
+          <div
+            onClick={toggleDropdown}
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 cursor-pointer"
+          >
+            <span className="text-green-500 text-xl">
+              <FiGrid />
+            </span>
+            <span className="ml-4 text-gray-700 text-sm font-medium">
+              Page Layout
+            </span>
+            <span className="ml-auto text-gray-500">
+              {isDropdownOpen ? <FiChevronUp /> : <FiChevronDown />}
+            </span>
+          </div>
+          {isDropdownOpen && (
+            <div className="ml-8 mt-2">
+              {pageLayoutSubItems.map((subItem, index) => (
+                <Link
+                  key={index}
+                  to={subItem.path}
+                  className="block p-2 rounded-lg hover:bg-gray-100 text-gray-700 text-sm font-medium cursor-pointer"
+                >
+                  {subItem.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
