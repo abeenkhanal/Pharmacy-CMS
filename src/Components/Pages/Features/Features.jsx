@@ -144,8 +144,6 @@ const FeaturesCMS = () => {
           </div>
         </div>
       </div>
-
-      {/* Edit Modal */}
       <div
         id="editModal"
         className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -193,7 +191,6 @@ const FeaturesCMS = () => {
         </div>
       </div>
 
-      {/* Delete Confirmation Modal */}
       <div
         id="deleteModal"
         className="fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"

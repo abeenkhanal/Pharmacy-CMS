@@ -20,6 +20,7 @@ function App() {
             <Route path="/banner" element={<Banner/>} />
             <Route path="/revolutionize" element={<Revolutionize />} />
             <Route path="/features" element={<Features />} />
+            
           </Routes>
         </div>
       </div>
