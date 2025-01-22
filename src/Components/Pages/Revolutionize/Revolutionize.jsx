@@ -94,8 +94,9 @@ const Revolutionize = () => {
                 </div>
 
                 {/* Table Section */}
-                <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
+                <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
                     <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Topics</h2>
+                    <div className="md:w-11/12 mx-auto">
                     <table className="w-full bg-white rounded shadow-lg">
                         <thead>
                             <tr className="bg-gray-200 text-gray-700 font-semibold">
@@ -145,6 +146,8 @@ const Revolutionize = () => {
                             ))}
                         </tbody>
                     </table>
+                    </div>
+                   
                 </div>
             </div>
 

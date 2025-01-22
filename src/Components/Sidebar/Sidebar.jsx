@@ -6,6 +6,7 @@ const menuItems = [
   { icon: <FiGrid />, label: "Hero", path: "/hero" },
   { icon: <FiGrid />, label: "Home Banner", path: "/banner" },
   { icon: <FiGrid />, label: "Revolutionize ", path: "/revolutionize" },
+  { icon: <FiGrid />, label: "Features ", path: "/features" },
 ];
 
 const Sidebar = () => {
