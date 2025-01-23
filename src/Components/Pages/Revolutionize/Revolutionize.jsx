@@ -1,3 +1,4 @@
+import JoditEditor from "jodit-react";
 import React from "react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 
@@ -62,12 +63,8 @@ const Revolutionize = () => {
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <textarea
-                name="description"
-                rows="3"
-                placeholder="Enter feature description"
-                className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <JoditEditor />
+             
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Choose Icon</label>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoPencil, IoTrash } from "react-icons/io5";
+import JoditEditor from "jodit-react";
 
 const Testimonials = () => {
   const [testimonials] = useState([
@@ -8,21 +9,21 @@ const Testimonials = () => {
       image: "/profile1.jpg",
       text: "The billing system is seamless and integrates well with insurance claims. Highly recommend this software!",
       name: "David Brown",
-      designation: "Pharmacist, MedPlus",
+      position: "Pharmacist, MedPlus",
     },
     {
       id: 2,
       image: "/profile2.jpg",
       text: "Real-time inventory updates and reports have helped us avoid stockouts and overstocking. Amazing software!",
       name: "Emily Carter",
-      designation: "Pharmacy Manager, WellCare Pharmacy",
+      position: "Pharmacy Manager, WellCare Pharmacy",
     },
     {
       id: 3,
       image: "/profile3.jpg",
       text: "This software makes compliance with regulations so much easier. It’s reliable and secure.",
       name: "James Wilson",
-      designation: "Owner, Wilson’s Pharmacy",
+      position: "Owner, Wilson’s Pharmacy",
     },
   ]);
 
@@ -63,22 +64,17 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-1">Designation</label>
+              <label className="block text-gray-600 font-medium mb-1">Position</label>
               <input
                 type="text"
-                name="designation"
-                placeholder="Enter designation"
+                name="position"
+                placeholder="Enter position"
                 className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Testimonial</label>
-              <textarea
-                name="text"
-                rows="4"
-                placeholder="Enter testimonial"
-                className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <JoditEditor />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Profile Image</label>
@@ -108,8 +104,9 @@ const Testimonials = () => {
                 <tr className="bg-gray-100 text-gray-700 font-semibold">
                   <th className="p-4 text-left border-b border-gray-200">Profile</th>
                   <th className="p-4 text-left border-b border-gray-200">Testimonial</th>
-                  <th className="p-4 text-left border-b border-gray-200">Client Name</th>
-                  <th className="p-4 text-left border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-left border-b border-gray-200">Name</th>
+                  <th className="p-4 text-left border-b border-gray-200">Position</th>
+                  <th className="p-4 text-center border-b border-gray-200">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -126,12 +123,8 @@ const Testimonials = () => {
                       />
                     </td>
                     <td className="p-4">{testimonial.text}</td>
-                    <td className="p-4">
-                      <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-gray-500 text-sm">{testimonial.designation}</p>
-                      </div>
-                    </td>
+                    <td className="p-4">{testimonial.name}</td>
+                    <td className="p-4">{testimonial.position}</td>
                     <td className="p-4 flex gap-2 justify-center">
                       <button
                         onClick={handleEditClick}
@@ -159,7 +152,7 @@ const Testimonials = () => {
       {/* Delete Confirmation Modal */}
       <div
         id="deleteModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
           <p className="text-lg font-medium mb-4">Are you sure you want to delete this testimonial?</p>
@@ -183,7 +176,7 @@ const Testimonials = () => {
       {/* Edit Modal */}
       <div
         id="editModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
+        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
       >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Testimonial</h2>
@@ -198,11 +191,11 @@ const Testimonials = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-1">Designation</label>
+              <label className="block text-gray-600 font-medium mb-1">Position</label>
               <input
                 type="text"
-                name="designation"
-                placeholder="Enter designation"
+                name="position"
+                placeholder="Enter position"
                 className="px-4 py-2 border w-full border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
@@ -212,6 +205,14 @@ const Testimonials = () => {
                 name="text"
                 rows="4"
                 placeholder="Enter testimonial"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Profile Image</label>
+              <input
+                type="file"
+                name="image"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
