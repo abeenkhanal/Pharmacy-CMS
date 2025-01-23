@@ -1,3 +1,4 @@
+import JoditEditor from "jodit-react";
 import React from "react";
 
 const CMSHero = () => {
@@ -6,7 +7,7 @@ const CMSHero = () => {
       {/* Header Section */}
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">BANNER SECTION</h1>
+          <h1 className="text-3xl font-bold">BANNER </h1>
           <p className="text-sm mt-2">Edit the banner section content below</p>
         </div>
 
@@ -27,13 +28,8 @@ const CMSHero = () => {
 
           {/* Subtitle Input */}
           <div className="mb-6">
-            <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
-            <textarea
-              name="subtitle"
-              rows="4"
-              placeholder="Enter your subtitle"
-              className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-            ></textarea>
+            <label className="block text-gray-600 font-medium mb-2">Desccription</label>
+           <JoditEditor/>
           </div>
 
           {/* Save Button */}

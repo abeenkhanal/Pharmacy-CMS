@@ -6,7 +6,7 @@ const Revolutionizetitle = () => {
     const topics = [
         {
             id: 1,
-            title: "Inventory Management",
+            title: "Streamline Processes",
             description:
                 "Keep track of stock levels and streamline order processes with ease.",
             image: "/inventory.jpg",

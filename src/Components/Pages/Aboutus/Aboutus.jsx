@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 
-const Hero = () => {
+const Aboutus = () => {
   const banners = [
     {
       id: 1,
@@ -32,8 +32,8 @@ const Hero = () => {
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">HERO </h1>
-          <p className="mt-2 text-sm">Edit the hero section content below</p>
+          <h1 className="text-3xl font-bold">ABOUT SECTION </h1>
+          <p className="mt-2 text-sm">Edit the About section content below</p>
         </div>
 
         {/* Form Section */}
@@ -196,4 +196,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Aboutus;
