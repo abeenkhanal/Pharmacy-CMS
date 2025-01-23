@@ -5,8 +5,8 @@ import { IoPencil, IoTrash } from "react-icons/io5";
 const Featurestitle = () => {
     const [banners] = useState([
         {
-            title: "Optimize Your Pharmacy Operations",
-            subtitle: "Welcome to PharmaEase, where we simplify pharmacy management with cutting-edge solutions.",
+            title: " Key Features of Our Pharmacy Management Software ",
+            subtitle: "Discover how our software can streamline your pharmacy operations with advanced tools and features.",
         },
     ]);
 

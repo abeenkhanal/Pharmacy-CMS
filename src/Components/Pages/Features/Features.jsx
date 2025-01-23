@@ -1,26 +1,45 @@
-import JoditEditor from "jodit-react";
 import React from "react";
+import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
+import { FaPills, FaFilePrescription, FaUsers, FaChartBar, FaCogs, FaTruck } from "react-icons/fa";
 
 const Features = () => {
   const featuresData = [
     {
       id: 1,
-      icon: "/icon-inventory.png",
+      icon: <FaPills />, 
       title: "Inventory Management",
-      description: "Keep track of stock levels and streamline order processes with ease.",
+      description: "Track and manage stock levels effortlessly",
     },
     {
       id: 2,
-      icon: "/icon-prescription.png",
+      icon: <FaFilePrescription />, 
       title: "Prescription Tracking",
-      description: "Efficiently manage prescriptions and ensure timely refills for your customers.",
+      description: "Easily manage and track prescriptions.",
     },
     {
       id: 3,
-      icon: "/icon-billing.png",
-      title: "Billing Solutions",
-      description: "Automate billing processes to reduce errors and save time.",
+      icon: <FaUsers />, 
+      title: "Team Collaboration",
+      description: "Improve communication among pharmacy staff",
+    },
+    {
+      id: 4,
+      icon: <FaChartBar />, 
+      title: "Sales Reports",
+      description: "Analyze and generate detailed sales reports."
+    },
+    {
+      id: 5,
+      icon: <FaCogs />, 
+      title: "Customizable Dashboard",
+      description: "Personalize your workflow for better productivity.",
+    },
+    {
+      id: 6,
+      icon: <FaTruck />, 
+      title: "Supplier Management",
+      description: "Efficiently manage and track suppliers.",
     },
   ];
 
@@ -63,7 +82,7 @@ const Features = () => {
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <JoditEditor/>
+              <JoditEditor />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Choose Icon</label>
@@ -98,17 +117,13 @@ const Features = () => {
                 </tr>
               </thead>
               <tbody>
-                {featuresData.map((featuresData) => (
-                  <tr key={featuresData.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200">
-                      <img
-                        src={featuresData.icon}
-                        alt={featuresData.title}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
+                {featuresData.map((data, i) => (
+                  <tr key={data.id} className="hover:bg-gray-50 transition">
+                    <td className="p-4 border-b border-gray-200 text-xl text-center">
+                      {data.icon} 
                     </td>
-                    <td className="p-4 border-b border-gray-200">{featuresData.title}</td>
-                    <td className="p-4 border-b border-gray-200">{featuresData.description}</td>
+                    <td className="p-4 border-b border-gray-200">{data.title}</td>
+                    <td className="p-4 border-b border-gray-200">{data.description}</td>
                     <td className="p-4 border-b border-gray-200 text-center">
                       <div className="flex gap-2 justify-center items-center">
                         <button
@@ -157,13 +172,6 @@ const Features = () => {
                 placeholder="Enter feature description"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
-            </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-2">Icon</label>
-              <input
-                type="file"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
             </div>
           </div>
           <div className="flex justify-end gap-4 mt-4">

@@ -6,10 +6,10 @@ const Revolutionizetitle = () => {
     const topics = [
         {
             id: 1,
-            title: "Streamline Processes",
-            description:
-                "Keep track of stock levels and streamline order processes with ease.",
-            image: "/inventory.jpg",
+            subtitle: "Streamline Processes",
+            title: "Revolutionize Your Pharmacy",
+            description: "PharmaEase is committed to transforming pharmacy management through innovative technology and user-friendly solutions.",
+            image: "/nurse.png",
         },
     ];
 
@@ -97,6 +97,7 @@ const Revolutionizetitle = () => {
                         <table className="w-full bg-white rounded shadow-lg">
                             <thead>
                                 <tr className="bg-gray-200 text-gray-700 font-semibold">
+                                    <th className="p-4 text-left">Subtitle</th>
                                     <th className="p-4 text-left">Title</th>
                                     <th className="p-4 text-left">Description</th>
                                     <th className="p-4 text-left">Image</th>
@@ -106,12 +107,13 @@ const Revolutionizetitle = () => {
                             <tbody>
                                 {topics.map((topic) => (
                                     <tr key={topic.id} className="border-b hover:bg-gray-100 transition">
+                                        <td className="p-4">{topic.subtitle}</td>
                                         <td className="p-4">{topic.title}</td>
                                         <td className="p-4">{topic.description}</td>
                                         <td className="p-4">
                                             <img
                                                 src={topic.image}
-                                                alt={topic.title}
+                                                alt={""}
                                                 className="h-20 w-20 rounded object-cover"
                                             />
                                         </td>
@@ -147,6 +149,14 @@ const Revolutionizetitle = () => {
                 <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
                     <h2 className="text-2xl font-semibold mb-4">Edit Topic</h2>
                     <div className="grid gap-4">
+                        <div>
+                            <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
+                            <input
+                                type="text"
+                                placeholder="Enter topic subtitle"
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            />
+                        </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Title</label>
                             <input

@@ -1,24 +1,25 @@
-import JoditEditor from "jodit-react";
 import React from "react";
+import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
+import { FiBox, FiClipboard, FiDollarSign } from "react-icons/fi";
 
 const Revolutionize = () => {
   const revolutionizeData = [
     {
       id: 1,
-      icon: "/icon-inventory.png",
+      icon: <FiBox />, 
       title: "Inventory Management",
       description: "Keep track of stock levels and streamline order processes with ease.",
     },
     {
       id: 2,
-      icon: "/icon-prescription.png",
+      icon: <FiClipboard />, 
       title: "Prescription Tracking",
       description: "Efficiently manage prescriptions and ensure timely refills for your customers.",
     },
     {
       id: 3,
-      icon: "/icon-billing.png",
+      icon: <FiDollarSign />,
       title: "Billing Solutions",
       description: "Automate billing processes to reduce errors and save time.",
     },
@@ -44,8 +45,8 @@ const Revolutionize = () => {
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">KEY FEATURES SECTION</h1>
-          <p className="mt-2 text-sm">Edit the Key Features Section content below</p>
+          <h1 className="text-3xl font-bold">Revolutionize  </h1>
+          <p className="mt-2 text-sm">Edit the Key revolutionize  Section content below</p>
         </div>
 
         {/* Form Section */}
@@ -64,7 +65,6 @@ const Revolutionize = () => {
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
               <JoditEditor />
-             
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Choose Icon</label>
@@ -99,17 +99,13 @@ const Revolutionize = () => {
                 </tr>
               </thead>
               <tbody>
-                {revolutionizeData.map((revolutionizeData) => (
-                  <tr key={revolutionizeData.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200">
-                      <img
-                        src={revolutionizeData.icon}
-                        alt={revolutionizeData.title}
-                        className="h-12 w-12 rounded-full object-cover"
-                      />
+                {revolutionizeData.map((data ,i) => (
+                  <tr key={data.id} className="hover:bg-gray-50 transition">
+                    <td className="p-4 border-b border-gray-200 text-xl text-center">
+                      {data.icon} 
                     </td>
-                    <td className="p-4 border-b border-gray-200">{revolutionizeData.title}</td>
-                    <td className="p-4 border-b border-gray-200">{revolutionizeData.description}</td>
+                    <td className="p-4 border-b border-gray-200">{data.title}</td>
+                    <td className="p-4 border-b border-gray-200">{data.description}</td>
                     <td className="p-4 border-b border-gray-200 text-center">
                       <div className="flex gap-2 justify-center items-center">
                         <button
@@ -158,13 +154,6 @@ const Revolutionize = () => {
                 placeholder="Enter feature description"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
-            </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-2">Icon</label>
-              <input
-                type="file"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
             </div>
           </div>
           <div className="flex justify-end gap-4 mt-4">
