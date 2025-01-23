@@ -20,8 +20,8 @@ function App() {
             <Route path="/hero" element={<Hero />} />
             <Route path="/banner" element={<Banner/>} />
             <Route path="/revolutionize" element={<Revolutionize />} />
-            <Route path="/features" element={<Featurestitle />} />
-            <Route path="/pagelayout/features" element={<Features />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/pagelayout/features" element={<Featurestitle />} />
             
           </Routes>
         </div>
