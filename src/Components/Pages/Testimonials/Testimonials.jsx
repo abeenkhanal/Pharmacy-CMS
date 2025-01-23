@@ -5,25 +5,46 @@ import JoditEditor from "jodit-react";
 const Testimonials = () => {
   const [testimonials] = useState([
     {
-      id: 1,
-      image: "/profile1.jpg",
-      text: "The billing system is seamless and integrates well with insurance claims. Highly recommend this software!",
+      name: "Dr. Ayesha Khan",
+      role: "Pharmacist, HealthCare Pharmacy",
+      image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "This pharmacy management system has streamlined our inventory and prescription handling. It's a must-have for every pharmacy.",
+    },
+    {
+      name: "John Peterson",
+      role: "Owner, Peterson's Pharmacy",
+      image: "https://images.pexels.com/photos/1674752/pexels-photo-1674752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "Managing my business has never been easier. The automated reporting and reminders save me hours of work every day.",
+    },
+    {
+      name: "Sarah Lopez",
+      role: "Pharmacy Technician, LifeCare Pharmacy",
+      image: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "The user-friendly interface and accurate tracking of medication stock have significantly reduced errors in our pharmacy.",
+    },
+    {
       name: "David Brown",
-      position: "Pharmacist, MedPlus",
+      role: "Pharmacist, MedPlus",
+      image: "https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "The billing system is seamless and integrates well with insurance claims. Highly recommend this software!",
     },
     {
-      id: 2,
-      image: "/profile2.jpg",
-      text: "Real-time inventory updates and reports have helped us avoid stockouts and overstocking. Amazing software!",
       name: "Emily Carter",
-      position: "Pharmacy Manager, WellCare Pharmacy",
+      role: "Pharmacy Manager, WellCare Pharmacy",
+      image: "https://images.pexels.com/photos/1542085/pexels-photo-1542085.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "Real-time inventory updates and reports have helped us avoid stockouts and overstocking. Amazing software!",
     },
     {
-      id: 3,
-      image: "/profile3.jpg",
-      text: "This software makes compliance with regulations so much easier. It’s reliable and secure.",
       name: "James Wilson",
-      position: "Owner, Wilson’s Pharmacy",
+      role: "Owner, Wilson’s Pharmacy",
+      image: "https://images.pexels.com/photos/1499327/pexels-photo-1499327.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      feedback:
+        "This software makes compliance with regulations so much easier. It’s reliable and secure.",
     },
   ]);
 
@@ -102,10 +123,10 @@ const Testimonials = () => {
             <table className="w-full bg-white rounded shadow-lg border-collapse border border-gray-200">
               <thead>
                 <tr className="bg-gray-100 text-gray-700 font-semibold">
-                  <th className="p-4 text-left border-b border-gray-200">Profile</th>
+                  <th className="p-4 text-left border-b border-gray-200">Image</th>
                   <th className="p-4 text-left border-b border-gray-200">Testimonial</th>
                   <th className="p-4 text-left border-b border-gray-200">Name</th>
-                  <th className="p-4 text-left border-b border-gray-200">Position</th>
+                  <th className="p-4 text-left border-b border-gray-200">Role</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
                 </tr>
               </thead>
@@ -122,9 +143,9 @@ const Testimonials = () => {
                         className="h-12 w-12 rounded-full object-cover"
                       />
                     </td>
-                    <td className="p-4">{testimonial.text}</td>
+                    <td className="p-4">{testimonial.feedback}</td>
                     <td className="p-4">{testimonial.name}</td>
-                    <td className="p-4">{testimonial.position}</td>
+                    <td className="p-4">{testimonial.role}</td>
                     <td className="p-4 flex gap-2 justify-center">
                       <button
                         onClick={handleEditClick}

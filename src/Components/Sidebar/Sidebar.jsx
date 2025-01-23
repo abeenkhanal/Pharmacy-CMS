@@ -10,11 +10,13 @@ const menuItems = [
   { icon: <FiGrid />, label: "Features", path: "/features" },
   { icon: <FiGrid />, label: "Testimonials", path: "/testimonials" },
   { icon: <FiGrid />, label: "About Us", path: "/aboutus" },
+  { icon: <FiGrid />, label: "Tailored", path: "/tailoredtitle" },
 ];
 
 const pageLayoutSubItems = [
   { label: "Features", path: "/pagelayout/features" },
   { label: "Revolutionize", path: "/pagelayout/revolutionize" },
+  { label: "Tailored", path: "/pagelayout/tailored" },
   { label: "Sidebar", path: "/pagelayout/sidebar" },
 ];
 
@@ -43,8 +45,6 @@ const Sidebar = () => {
             </span>
           </Link>
         ))}
-
-        {/* Page Layout with Dropdown */}
         <div className="mt-4">
           <div
             onClick={toggleDropdown}

@@ -6,8 +6,8 @@ const Aboutus = () => {
   const banners = [
     {
       id: 1,
-      title: "Optimize Your Pharmacy Operations",
-      subtitle: "Welcome to PharmaEase, where we simplify pharmacy management with cutting-edge solutions.",
+      title: "Revolutionize Your Pharmacy Management",
+      subtitle: "At PharmaPro-CRM, we specialize in helping pharmacies streamline their operations, improve efficiency, and deliver exceptional customer service. From inventory tracking to prescription management and customer communications, we provide an all-in-one solution tailored to meet your business needs     ",
       image: "/background.jpg",
     },
   ];
@@ -72,7 +72,6 @@ const Aboutus = () => {
           </form>
         </div>
 
-        {/* Banner Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Data</h2>
           <div className="md:w-11/12 mx-auto">
@@ -121,7 +120,7 @@ const Aboutus = () => {
         </div>
       </div>
 
-      {/* Delete Confirmation Modal */}
+ 
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
