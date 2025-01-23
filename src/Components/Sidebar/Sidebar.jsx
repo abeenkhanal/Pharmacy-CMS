@@ -8,11 +8,12 @@ const menuItems = [
   { icon: <FiGrid />, label: "Home Banner", path: "/banner" },
   { icon: <FiGrid />, label: "Revolutionize", path: "/revolutionize" },
   { icon: <FiGrid />, label: "Features", path: "/features" },
+  { icon: <FiGrid />, label: "Testimonials", path: "/testimonials" },
 ];
 
 const pageLayoutSubItems = [
   { label: "Features", path: "/pagelayout/features" },
-  { label: "Footer", path: "/pagelayout/footer" },
+  { label: "Revolutionize", path: "/pagelayout/revolutionize" },
   { label: "Sidebar", path: "/pagelayout/sidebar" },
 ];
 

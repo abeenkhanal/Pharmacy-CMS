@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 
-const Features = () => {
+const Featurestitle = () => {
     const [banners] = useState([
         {
             title: "Optimize Your Pharmacy Operations",
             subtitle: "Welcome to PharmaEase, where we simplify pharmacy management with cutting-edge solutions.",
-            image: "/background.jpg",
         },
     ]);
 
@@ -54,14 +53,6 @@ const Features = () => {
                             <label className="block text-gray-600 font-medium mb-1">Description</label>
                             <JoditEditor />
                         </div>
-                        <div>
-                            <label className="block text-gray-600 font-medium mb-1">Image</label>
-                            <input
-                                type="file"
-                                accept="image/*"
-                                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
-                            />
-                        </div>
                         <div className="text-left">
                             <button
                                 type="button"
@@ -81,8 +72,7 @@ const Features = () => {
                             <thead>
                                 <tr className="bg-gray-200 text-gray-700 font-semibold">
                                     <th className="p-4 text-left">Title</th>
-                                    <th className="p-4 text-left">Discription</th>
-                                    <th className="p-4 text-left">Image</th>
+                                    <th className="p-4 text-left">Description</th>
                                     <th className="p-4 text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -91,13 +81,6 @@ const Features = () => {
                                     <tr key={index} className="border-b hover:bg-gray-100 transition">
                                         <td className="p-4">{banner.title}</td>
                                         <td className="p-4">{banner.subtitle}</td>
-                                        <td className="p-4">
-                                            <img
-                                                src={banner.image}
-                                                alt={banner.title}
-                                                className="h-20 w-20 rounded object-cover"
-                                            />
-                                        </td>
                                         <td className="p-4 flex gap-2 justify-center">
                                             <button
                                                 onClick={() => handleEditClick(index)}
@@ -151,14 +134,9 @@ const Features = () => {
             {editIndex !== null && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                     <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md relative">
-
-
-                        {/* Modal Header */}
                         <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Edit Banner</h2>
 
-                        {/* Modal Content */}
                         <div className="grid gap-6">
-                            {/* Title Input */}
                             <div>
                                 <label className="block text-gray-600 font-medium mb-2">Title</label>
                                 <input
@@ -168,8 +146,6 @@ const Features = () => {
                                     className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 />
                             </div>
-
-                            {/* Subtitle Input */}
                             <div>
                                 <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
                                 <input
@@ -179,19 +155,8 @@ const Features = () => {
                                     className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 />
                             </div>
-
-                            {/* Image Input */}
-                            <div>
-                                <label className="block text-gray-600 font-medium mb-2">Image</label>
-                                <input
-                                    type="file"
-                                    name="image"
-                                    className="w-full px-4 py-2 border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
-                            </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className="flex justify-end gap-4 mt-6">
                             <button
                                 onClick={() => setEditIndex(null)}
@@ -209,9 +174,8 @@ const Features = () => {
                     </div>
                 </div>
             )}
-
         </div>
     );
 };
 
-export default Features;
+export default Featurestitle;
