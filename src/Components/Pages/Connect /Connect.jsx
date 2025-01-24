@@ -1,28 +1,28 @@
 import React from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
-import { FiBox, FiClipboard, FiDollarSign } from "react-icons/fi";
+import { FaLightbulb, FaUsers, FaShieldAlt } from 'react-icons/fa';
 
 const Connect = () => {
   const revolutionizeData = [
     {
-      id: 1,
-      icon: <FiBox />, 
-      title: "Inventory Management",
-      description: "Keep track of stock levels and streamline order processes with ease.",
-    },
-    {
-      id: 2,
-      icon: <FiClipboard />, 
-      title: "Prescription Tracking",
-      description: "Efficiently manage prescriptions and ensure timely refills for your customers.",
-    },
-    {
-      id: 3,
-      icon: <FiDollarSign />,
-      title: "Billing Solutions",
-      description: "Automate billing processes to reduce errors and save time.",
-    },
+        id: 1,
+        icon: <FaLightbulb className="text-blue-300 text-3xl" />,
+        title: "Pharmacy Innovations",
+        description: "Stay ahead with the latest in pharmacy technology and management solutions.",
+      },
+      {
+        id: 2,
+        icon: <FaUsers className="text-blue-300 text-3xl" />,
+        title: "Community Support",
+        description: "Join our community to connect with other pharmacy professionals and share insights.",
+      },
+      {
+        id: 3,
+        icon: <FaShieldAlt className="text-blue-300 text-3xl" />,
+        title: "Secure Solutions",
+        description: "Trust in our secure and reliable software to manage your pharmacy operations efficiently.",
+      },
   ];
 
   const handleEditClick = () => {
@@ -30,7 +30,7 @@ const Connect = () => {
   };
 
   const handleDeleteClick = () => {
-    document.getElementById("deleteModal").style.display = "flex";
+    document.getElementById("dedal").style.display = "flex";
   };
 
   const closeModals = () => {
@@ -45,8 +45,8 @@ const Connect = () => {
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">Revolutionize  </h1>
-          <p className="mt-2 text-sm">Edit the Key revolutionize  Section content below</p>
+          <h1 className="text-3xl font-bold">CONNECT  </h1>
+          <p className="mt-2 text-sm">Edit the Key Connect  Section content below</p>
         </div>
 
         {/* Form Section */}
