@@ -10,7 +10,8 @@ const menuItems = [
   { icon: <FiGrid />, label: "Features", path: "/features" },
   { icon: <FiGrid />, label: "Testimonials", path: "/testimonials" },
   { icon: <FiGrid />, label: "About Us", path: "/aboutus" },
-  { icon: <FiGrid />, label: "Tailored", path: "/tailoredtitle" },
+  { icon: <FiGrid />, label: "Tailored", path: "/tailored" },
+  { icon: <FiGrid />, label: "Connect", path: "/connect" },
 ];
 
 const pageLayoutSubItems = [
@@ -18,6 +19,7 @@ const pageLayoutSubItems = [
   { label: "Revolutionize", path: "/pagelayout/revolutionize" },
   { label: "Tailored", path: "/pagelayout/tailored" },
   { label: "Sidebar", path: "/pagelayout/sidebar" },
+  { label: "Connect", path: "/pagelayout/conect" },
 ];
 
 const Sidebar = () => {
