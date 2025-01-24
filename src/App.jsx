@@ -36,7 +36,7 @@ function App() {
             <Route path="/pagelayout/tailored" element={<Tailoredtitle/> } />  
             <Route path="/tailored" element={<Tailored/> } />  
             <Route path="/connect" element={<Connect/> } /> 
-            <Route path="/pagelayout/connect" element={<Connecttitle/> } />   
+            <Route path="/pagelayout/connect" element={<Connecttitle/> } />    
 
             
           </Routes>

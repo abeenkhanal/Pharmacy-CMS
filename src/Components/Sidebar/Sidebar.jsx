@@ -19,7 +19,7 @@ const pageLayoutSubItems = [
   { label: "Revolutionize", path: "/pagelayout/revolutionize" },
   { label: "Tailored", path: "/pagelayout/tailored" },
   { label: "Sidebar", path: "/pagelayout/sidebar" },
-  { label: "Connect", path: "/pagelayout/conect" },
+  { label: "Connect", path: "/pagelayout/connect" },
 ];
 
 const Sidebar = () => {
