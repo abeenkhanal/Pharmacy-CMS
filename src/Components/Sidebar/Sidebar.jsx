@@ -21,6 +21,7 @@ const pageLayoutSubItems = [
   { label: "Tailored", path: "/pagelayout/tailored" },
   { label: "Sidebar", path: "/pagelayout/sidebar" },
   { label: "Connect", path: "/pagelayout/connect" },
+  { label: "Pricing", path: "/pagelayout/pricing" },
 ];
 
 const Sidebar = () => {
