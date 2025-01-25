@@ -12,6 +12,7 @@ const menuItems = [
   { icon: <FiGrid />, label: "About Us", path: "/aboutus" },
   { icon: <FiGrid />, label: "Tailored", path: "/tailored" },
   { icon: <FiGrid />, label: "Connect", path: "/connect" },
+  { icon: <FiGrid />, label: "Pricing", path: "/pricing" },
 ];
 
 const pageLayoutSubItems = [

@@ -15,6 +15,7 @@ import Tailored from "./Components/Pages/Tailored/Tailored";
 import Tailoredtitle from "./Components/Pages/Tailored/Tailoredtitle";
 import Connect from "./Components/Pages/Connect /Connect";
 import Connecttitle from "./Components/Pages/Connect /Connecttitle";
+import Pricing from "./Components/Pages/Pricing/Pricing";
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
             <Route path="/tailored" element={<Tailored/> } />  
             <Route path="/connect" element={<Connect/> } /> 
             <Route path="/pagelayout/connect" element={<Connecttitle/> } />    
-
+            <Route path="/pricing" element={<Pricing/> } /> 
             
           </Routes>
         </div>
