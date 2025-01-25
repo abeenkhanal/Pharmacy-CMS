@@ -150,7 +150,7 @@ const Connecttitle = () => {
                         </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Description</label>
-                            <JoditEditor />
+                           
                         </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Image</label>
