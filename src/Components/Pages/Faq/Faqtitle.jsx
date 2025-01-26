@@ -6,8 +6,8 @@ const Faqtitle = () => {
   const faqTitles = [
     {
       id: 1,
-      title: "What is PharmaEase?",
-      description: "PharmaEase simplifies pharmacy operations with cutting-edge solutions.",
+      title: "Frequently Asked Questions",
+      description: "Our Pharmacy Management System simplifies inventory, tracks expiries, and generates insightful reports. Below are answers to common questions to help you understand how it can benefit your pharmacy.",
       headerImage: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       backgroundImage: "https://images.pexels.com/photos/19471016/pexels-photo-19471016/free-photo-of-young-pharmacist-writing-notes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
       iconImage: "https://images.pexels.com/photos/4031323/pexels-photo-4031323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
@@ -40,7 +40,7 @@ const Faqtitle = () => {
 
 
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add FAQ Title</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">Frequently Asked Questions</h2>
           <form className="space-y-6">
 
             <div>

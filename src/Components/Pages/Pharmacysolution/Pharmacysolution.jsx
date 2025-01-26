@@ -1,27 +1,27 @@
 import React from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
-import { FaLightbulb, FaUsers, FaShieldAlt } from 'react-icons/fa';
+import { FaPills, FaPrescriptionBottle, FaUsers } from "react-icons/fa";
 
-const Connect = () => {
-  const connectData = [
+const Revolutionize = () => {
+  const revolutionizeData = [
     {
       id: 1,
-      icon: <FaLightbulb className="text-blue-300 text-3xl" />,
-      title: "Pharmacy Innovations",
-      description: "Stay ahead with the latest in pharmacy technology and management solutions.",
+      icon: <FaPills className="text-blue-300 text-3xl" />,
+      title: "Advanced Inventory Management",
+      description: "Monitor stock levels in real-time and streamline restocking with automated alerts.",
     },
     {
       id: 2,
-      icon: <FaUsers className="text-blue-300 text-3xl" />,
-      title: "Community Support",
-      description: "Join our community to connect with other pharmacy professionals and share insights.",
+      icon: <FaPrescriptionBottle className="text-blue-300 text-3xl" />,
+      title: "Accurate Prescription Tracking",
+      description: "Manage and track prescriptions efficiently to ensure patient satisfaction.",
     },
     {
       id: 3,
-      icon: <FaShieldAlt className="text-blue-300 text-3xl" />,
-      title: "Secure Solutions",
-      description: "Trust in our secure and reliable software to manage your pharmacy operations efficiently.",
+      icon: <FaUsers className="text-blue-300 text-3xl" />,
+      title: "Team Collaboration",
+      description: "Enhance teamwork with tools designed for seamless communication among staff.",
     },
   ];
 
@@ -44,12 +44,13 @@ const Connect = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">CONNECT AND DISCOVER SECTION</h1>
-          <p className="mt-2 text-sm">Manage the Connect and Discover Section below</p>
+          <h1 className="text-3xl font-bold">Revolutionize Pharmacy Management</h1>
+          <p className="mt-2 text-sm">Manage your Pharmacy Management System features below</p>
         </div>
 
+        {/* Add New Feature Form */}
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Content</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
           <form className="space-y-6">
             <div>
               <label className="block text-gray-600 font-medium mb-1">Title</label>
@@ -83,6 +84,7 @@ const Connect = () => {
           </form>
         </div>
 
+        {/* Manage Features Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -96,8 +98,8 @@ const Connect = () => {
                 </tr>
               </thead>
               <tbody>
-                {connectData.map((data) => (
-                  <tr key={data.id} className="hover:bg-gray-50 transition">
+                {revolutionizeData.map((data, index) => (
+                  <tr key={index} className="hover:bg-gray-50 transition">
                     <td className="p-4 border-b border-gray-200 text-center">{data.icon}</td>
                     <td className="p-4 border-b border-gray-200">{data.title}</td>
                     <td className="p-4 border-b border-gray-200">{data.description}</td>
@@ -127,6 +129,7 @@ const Connect = () => {
         </div>
       </div>
 
+      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -176,12 +179,15 @@ const Connect = () => {
         </div>
       </div>
 
+      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
-          <p className="text-lg font-medium mb-4">Are you sure you want to delete this feature?</p>
+          <p className="text-lg font-medium mb-4">
+            Are you sure you want to delete this feature?
+          </p>
           <div className="flex justify-center gap-4">
             <button
               onClick={closeModals}
@@ -202,4 +208,4 @@ const Connect = () => {
   );
 };
 
-export default Connect;
+export default Revolutionize;

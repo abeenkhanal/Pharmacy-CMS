@@ -25,6 +25,9 @@ import Transform from "./Components/Pages/Transform/Transform";
 import Transformtitle from "./Components/Pages/Transform/Transformtitle";
 import Progressbar from "./Components/Pages/Progressbar/Progressbar";
 import Whyus from "./Components/Pages/Whyus/Whyus";
+import Vision from "./Components/Pages/Vision /Vision";
+import Pharmacysolution from "./Components/Pages/Pharmacysolution/Pharmacysolution";
+import Pharmacysolutiiontitle from "./Components/Pages/Pharmacysolution/Pharmacysolutiiontitle";
 
 
 function App() {
@@ -57,6 +60,9 @@ function App() {
             <Route path="/pagelayout/transform" element={<Transformtitle/> } /> 
             <Route path="/progressbar" element={<Progressbar/> } />
             <Route path="/whyus" element={<Whyus/> } />
+            <Route path="/vision" element={<Vision/> } />
+            <Route path="/pharmacysolution" element={<Pharmacysolution/> } />
+            <Route path="/pagelayout/pharmacysolution" element={<Pharmacysolutiiontitle/> } />
           </Routes>
         </div>
       </div>

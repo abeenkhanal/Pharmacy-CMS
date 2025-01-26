@@ -18,6 +18,8 @@ const menuItems = [
   { icon: <FiGrid />, label: "Transform", path: "/transform" },
   { icon: <FiGrid />, label: "Progress Bar", path: "/progressbar" },
   { icon: <FiGrid />, label: "Why Us", path: "/whyus" },
+  { icon: <FiGrid />, label: "Vision", path: "/vision" },
+  { icon: <FiGrid />, label: "Pharmacy Solution ", path: "/pharmacysolution" },
 ];
 
 const pageLayoutSubItems = [
@@ -30,6 +32,7 @@ const pageLayoutSubItems = [
   { label: "Discover", path: "/pagelayout/discover" },
   { label: "FAQ", path: "/pagelayout/faq" },
   { label: "Transform", path: "/pagelayout/transform" },
+  { label: "Pharmacy Solution ", path: "/pagelayout/pharmacysolution" },
 ];
 
 const Sidebar = () => {
