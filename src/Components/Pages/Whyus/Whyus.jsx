@@ -1,27 +1,44 @@
 import React from "react";
-import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
-import { FiBox, FiClipboard, FiDollarSign } from "react-icons/fi";
+import { FaBoxes, FaPrescriptionBottle, FaChartLine, FaUserMd, FaLock, FaHeadset } from "react-icons/fa";
 
-const Revolutionize = () => {
+const Whyus = () => {
   const revolutionizeData = [
     {
       id: 1,
-      icon: <FiBox className="text-blue-600 text-3xl" />,
+      icon: <FaBoxes className="text-blue-600 text-3xl" />,
       title: "Inventory Management",
-      description: "Keep track of stock levels and streamline order processes with ease.",
+      description: "Easily track and manage medicine stocks with real-time updates and low-stock alerts.",
     },
     {
       id: 2,
-      icon: <FiClipboard className="text-blue-600 text-3xl" />,
+      icon: <FaPrescriptionBottle className="text-blue-600 text-3xl" />,
       title: "Prescription Tracking",
-      description: "Efficiently manage prescriptions and ensure timely refills for your customers.",
+      description: "Ensure seamless prescription fulfillment with automated tracking and reminders.",
     },
     {
       id: 3,
-      icon: <FiDollarSign className="text-blue-600 text-3xl" />,
-      title: "Billing Solutions",
-      description: "Automate billing processes to reduce errors and save time.",
+      icon: <FaChartLine className="text-blue-600 text-3xl" />,
+      title: "Analytics Dashboard",
+      description: "Gain insights into your pharmacy’s performance with detailed sales and inventory reports.",
+    },
+    {
+      id: 4,
+      icon: <FaUserMd className="text-blue-600 text-3xl" />,
+      title: "Patient Management",
+      description: "Keep track of patient profiles, prescriptions, and medical history in one place.",
+    },
+    {
+      id: 5,
+      icon: <FaLock className="text-blue-600 text-3xl" />,
+      title: "Secure Data Storage",
+      description: "Protect sensitive information with our secure and compliant data storage solutions.",
+    },
+    {
+      id: 6,
+      icon: <FaHeadset className="text-blue-600 text-3xl" />,
+      title: "24/7 Support",
+      description: "Get round-the-clock technical support for uninterrupted operations.",
     },
   ];
 
@@ -44,11 +61,10 @@ const Revolutionize = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">Revolutionize CMS</h1>
-          <p className="mt-2 text-sm">Manage your Revolutionize section below</p>
+          <h1 className="text-3xl font-bold">Why Choose Us CMS</h1>
+          <p className="mt-2 text-sm">Manage your "Why Choose Us" section below</p>
         </div>
 
-        {/* Add New Feature Form */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
           <form className="space-y-6">
@@ -63,7 +79,12 @@ const Revolutionize = () => {
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <JoditEditor />
+              <textarea
+                name="description"
+                rows="4"
+                placeholder="Enter feature description"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
@@ -84,7 +105,6 @@ const Revolutionize = () => {
           </form>
         </div>
 
-        {/* Manage Features Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -129,7 +149,6 @@ const Revolutionize = () => {
         </div>
       </div>
 
-      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -179,7 +198,6 @@ const Revolutionize = () => {
         </div>
       </div>
 
-      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -208,4 +226,4 @@ const Revolutionize = () => {
   );
 };
 
-export default Revolutionize;
+export default Whyus;

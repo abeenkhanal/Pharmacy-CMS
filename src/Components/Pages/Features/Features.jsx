@@ -7,37 +7,37 @@ const Features = () => {
   const featuresData = [
     {
       id: 1,
-      icon: <FaPills />, 
+      icon: <FaPills className="text-blue-600 text-3xl" />,
       title: "Inventory Management",
       description: "Track and manage stock levels effortlessly",
     },
     {
       id: 2,
-      icon: <FaFilePrescription />, 
+      icon: <FaFilePrescription className="text-blue-600 text-3xl" />,
       title: "Prescription Tracking",
       description: "Easily manage and track prescriptions.",
     },
     {
       id: 3,
-      icon: <FaUsers />, 
+      icon: <FaUsers className="text-blue-600 text-3xl" />,
       title: "Team Collaboration",
       description: "Improve communication among pharmacy staff",
     },
     {
       id: 4,
-      icon: <FaChartBar />, 
+      icon: <FaChartBar className="text-blue-600 text-3xl" />,
       title: "Sales Reports",
-      description: "Analyze and generate detailed sales reports."
+      description: "Analyze and generate detailed sales reports.",
     },
     {
       id: 5,
-      icon: <FaCogs />, 
+      icon: <FaCogs className="text-blue-600 text-3xl" />,
       title: "Customizable Dashboard",
       description: "Personalize your workflow for better productivity.",
     },
     {
       id: 6,
-      icon: <FaTruck />, 
+      icon: <FaTruck className="text-blue-600 text-3xl" />,
       title: "Supplier Management",
       description: "Efficiently manage and track suppliers.",
     },
@@ -61,14 +61,13 @@ const Features = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
-
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">KEY FEATURES SECTION</h1>
-          <p className="mt-2 text-sm">Edit the Key Features Section content below</p>
+          <h1 className="text-3xl font-bold">KEY FEATURES CMS</h1>
+          <p className="mt-2 text-sm">Manage your key features section below</p>
         </div>
 
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
           <form className="space-y-6">
             <div>
               <label className="block text-gray-600 font-medium mb-1">Title</label>
@@ -84,7 +83,7 @@ const Features = () => {
               <JoditEditor />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-1">Choose Icon</label>
+              <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
               <input
                 type="file"
                 accept="image/*"
@@ -101,6 +100,7 @@ const Features = () => {
             </div>
           </form>
         </div>
+
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -116,9 +116,7 @@ const Features = () => {
               <tbody>
                 {featuresData.map((data, i) => (
                   <tr key={data.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200 text-xl text-center">
-                      {data.icon} 
-                    </td>
+                    <td className="p-4 border-b border-gray-200 text-center">{data.icon}</td>
                     <td className="p-4 border-b border-gray-200">{data.title}</td>
                     <td className="p-4 border-b border-gray-200">{data.description}</td>
                     <td className="p-4 border-b border-gray-200 text-center">
@@ -153,9 +151,9 @@ const Features = () => {
       >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Feature</h2>
-          <div className="grid gap-4">
+          <form className="space-y-6">
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Title</label>
+              <label className="block text-gray-600 font-medium mb-1">Title</label>
               <input
                 type="text"
                 placeholder="Enter feature title"
@@ -163,13 +161,22 @@ const Features = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Description</label>
+              <label className="block text-gray-600 font-medium mb-1">Description</label>
               <textarea
+                rows="4"
                 placeholder="Enter feature description"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+              />
             </div>
-          </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+              />
+            </div>
+          </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
               onClick={closeModals}
@@ -186,14 +193,13 @@ const Features = () => {
           </div>
         </div>
       </div>
+
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
-          <p className="text-lg font-medium mb-4">
-            Are you sure you want to delete this feature?
-          </p>
+          <p className="text-lg font-medium mb-4">Are you sure you want to delete this feature?</p>
           <div className="flex justify-center gap-4">
             <button
               onClick={closeModals}

@@ -24,6 +24,7 @@ import Faqtitle from "./Components/Pages/Faq/Faqtitle";
 import Transform from "./Components/Pages/Transform/Transform";
 import Transformtitle from "./Components/Pages/Transform/Transformtitle";
 import Progressbar from "./Components/Pages/Progressbar/Progressbar";
+import Whyus from "./Components/Pages/Whyus/Whyus";
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/transform" element={<Transform/> } />
             <Route path="/pagelayout/transform" element={<Transformtitle/> } /> 
             <Route path="/progressbar" element={<Progressbar/> } />
+            <Route path="/whyus" element={<Whyus/> } />
           </Routes>
         </div>
       </div>

@@ -17,6 +17,7 @@ const menuItems = [
   { icon: <FiGrid />, label: "FAQ", path: "/faq" },
   { icon: <FiGrid />, label: "Transform", path: "/transform" },
   { icon: <FiGrid />, label: "Progress Bar", path: "/progressbar" },
+  { icon: <FiGrid />, label: "Why Us", path: "/whyus" },
 ];
 
 const pageLayoutSubItems = [

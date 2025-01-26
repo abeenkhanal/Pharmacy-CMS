@@ -4,25 +4,25 @@ import { IoPencil, IoTrash } from "react-icons/io5";
 import { FaLightbulb, FaUsers, FaShieldAlt } from 'react-icons/fa';
 
 const Connect = () => {
-  const revolutionizeData = [
+  const connectData = [
     {
-        id: 1,
-        icon: <FaLightbulb className="text-blue-300 text-3xl" />,
-        title: "Pharmacy Innovations",
-        description: "Stay ahead with the latest in pharmacy technology and management solutions.",
-      },
-      {
-        id: 2,
-        icon: <FaUsers className="text-blue-300 text-3xl" />,
-        title: "Community Support",
-        description: "Join our community to connect with other pharmacy professionals and share insights.",
-      },
-      {
-        id: 3,
-        icon: <FaShieldAlt className="text-blue-300 text-3xl" />,
-        title: "Secure Solutions",
-        description: "Trust in our secure and reliable software to manage your pharmacy operations efficiently.",
-      },
+      id: 1,
+      icon: <FaLightbulb className="text-blue-300 text-3xl" />,
+      title: "Pharmacy Innovations",
+      description: "Stay ahead with the latest in pharmacy technology and management solutions.",
+    },
+    {
+      id: 2,
+      icon: <FaUsers className="text-blue-300 text-3xl" />,
+      title: "Community Support",
+      description: "Join our community to connect with other pharmacy professionals and share insights.",
+    },
+    {
+      id: 3,
+      icon: <FaShieldAlt className="text-blue-300 text-3xl" />,
+      title: "Secure Solutions",
+      description: "Trust in our secure and reliable software to manage your pharmacy operations efficiently.",
+    },
   ];
 
   const handleEditClick = () => {
@@ -30,7 +30,7 @@ const Connect = () => {
   };
 
   const handleDeleteClick = () => {
-    document.getElementById("dedal").style.display = "flex";
+    document.getElementById("deleteModal").style.display = "flex";
   };
 
   const closeModals = () => {
@@ -44,12 +44,12 @@ const Connect = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">CONNECT  </h1>
-          <p className="mt-2 text-sm">Edit the Key Connect  Section content below</p>
+          <h1 className="text-3xl font-bold">CONNECT SECTION</h1>
+          <p className="mt-2 text-sm">Manage the Connect Section below</p>
         </div>
 
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Content</h2>
           <form className="space-y-6">
             <div>
               <label className="block text-gray-600 font-medium mb-1">Title</label>
@@ -65,7 +65,7 @@ const Connect = () => {
               <JoditEditor />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-1">Choose Icon</label>
+              <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
               <input
                 type="file"
                 accept="image/*"
@@ -96,11 +96,9 @@ const Connect = () => {
                 </tr>
               </thead>
               <tbody>
-                {revolutionizeData.map((data ,i) => (
+                {connectData.map((data) => (
                   <tr key={data.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200 text-xl text-center">
-                      {data.icon} 
-                    </td>
+                    <td className="p-4 border-b border-gray-200 text-center">{data.icon}</td>
                     <td className="p-4 border-b border-gray-200">{data.title}</td>
                     <td className="p-4 border-b border-gray-200">{data.description}</td>
                     <td className="p-4 border-b border-gray-200 text-center">
@@ -135,9 +133,9 @@ const Connect = () => {
       >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Feature</h2>
-          <div className="grid gap-4">
+          <form className="space-y-6">
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Title</label>
+              <label className="block text-gray-600 font-medium mb-1">Title</label>
               <input
                 type="text"
                 placeholder="Enter feature title"
@@ -145,13 +143,22 @@ const Connect = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Description</label>
+              <label className="block text-gray-600 font-medium mb-1">Description</label>
               <textarea
+                rows="4"
                 placeholder="Enter feature description"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+              />
             </div>
-          </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+              />
+            </div>
+          </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
               onClick={closeModals}
@@ -174,9 +181,7 @@ const Connect = () => {
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
-          <p className="text-lg font-medium mb-4">
-            Are you sure you want to delete this feature?
-          </p>
+          <p className="text-lg font-medium mb-4">Are you sure you want to delete this feature?</p>
           <div className="flex justify-center gap-4">
             <button
               onClick={closeModals}
