@@ -23,6 +23,7 @@ const pageLayoutSubItems = [
   { label: "Sidebar", path: "/pagelayout/sidebar" },
   { label: "Connect", path: "/pagelayout/connect" },
   { label: "Pricing", path: "/pagelayout/pricing" },
+  { label: "Discover", path: "/pagelayout/discover" },
 ];
 
 const Sidebar = () => {

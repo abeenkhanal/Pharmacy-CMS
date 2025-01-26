@@ -18,6 +18,7 @@ import Connecttitle from "./Components/Pages/Connect /Connecttitle";
 import Pricing from "./Components/Pages/Pricing/Pricing";
 import Pricingtitle from "./Components/Pages/Pricing/Pricingtitle";
 import Discover from "./Components/Pages/Discover/Discover";
+import Discovertitle from "./Components/Pages/Discover/Discovertitle";
 
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
             <Route path="/pagelayout/connect" element={<Connecttitle/> } />    
             <Route path="/pricing" element={<Pricing/> } /> 
             <Route path="/pagelayout/pricing" element={<Pricingtitle/> } /> 
-            <Route path="/discover" element={<Discover/> } /> 
+            <Route path="/discover" element={<Discover/> } />
+            <Route path="/pagelayout/discover" element={<Discovertitle/> } /> 
           </Routes>
         </div>
       </div>
