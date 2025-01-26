@@ -1,38 +1,54 @@
-import { FiHome, FiGrid, FiChevronDown, FiChevronUp } from "react-icons/fi";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import {
+  FiHome,
+  FiImage,
+  FiSettings,
+  FiBarChart,
+  FiUser,
+  FiHelpCircle,
+  FiLayers,
+  FiSliders,
+  FiDollarSign,
+  FiTrendingUp,
+  FiBookmark,
+  FiCheckCircle,
+  FiChevronDown,
+  FiChevronUp,
+} from "react-icons/fi";
+import { MdOutlineConnectWithoutContact } from "react-icons/md";
+import { RiQuestionAnswerLine } from "react-icons/ri";
 
 const menuItems = [
   { icon: <FiHome />, label: "Dashboard", path: "/" },
-  { icon: <FiGrid />, label: "Hero", path: "/hero" },
-  { icon: <FiGrid />, label: "Home Banner", path: "/banner" },
-  { icon: <FiGrid />, label: "Revolutionize", path: "/revolutionize" },
-  { icon: <FiGrid />, label: "Features", path: "/features" },
-  { icon: <FiGrid />, label: "Testimonials", path: "/testimonials" },
-  { icon: <FiGrid />, label: "About Us", path: "/aboutus" },
-  { icon: <FiGrid />, label: "Tailored", path: "/tailored" },
-  { icon: <FiGrid />, label: "Connect", path: "/connect" },
-  { icon: <FiGrid />, label: "Pricing", path: "/pricing" },
-  { icon: <FiGrid />, label: "Discover", path: "/discover" },
-  { icon: <FiGrid />, label: "FAQ", path: "/faq" },
-  { icon: <FiGrid />, label: "Transform", path: "/transform" },
-  { icon: <FiGrid />, label: "Progress Bar", path: "/progressbar" },
-  { icon: <FiGrid />, label: "Why Us", path: "/whyus" },
-  { icon: <FiGrid />, label: "Vision", path: "/vision" },
-  { icon: <FiGrid />, label: "Pharmacy Solution ", path: "/pharmacysolution" },
+  { icon: <FiImage />, label: "Hero", path: "/hero" },
+  { icon: <FiImage />, label: "Home Banner", path: "/banner" },
+  { icon: <FiBarChart />, label: "Revolutionize", path: "/revolutionize" },
+  { icon: <FiSettings />, label: "Features", path: "/features" },
+  { icon: <FiUser />, label: "Testimonials", path: "/testimonials" },
+  { icon: <FiLayers />, label: "About Us", path: "/aboutus" },
+  { icon: <FiSliders />, label: "Tailored", path: "/tailored" },
+  { icon: <MdOutlineConnectWithoutContact />, label: "Connect", path: "/connect" },
+  { icon: <FiDollarSign />, label: "Pricing", path: "/pricing" },
+  { icon: <FiTrendingUp />, label: "Discover", path: "/discover" },
+  { icon: <RiQuestionAnswerLine />, label: "FAQ", path: "/faq" },
+  { icon: <FiBookmark />, label: "Transform", path: "/transform" },
+  { icon: <FiCheckCircle />, label: "Progress Bar", path: "/progressbar" },
+  { icon: <FiHelpCircle />, label: "Why Us", path: "/whyus" },
+  { icon: <FiSettings />, label: "Vision", path: "/vision" },
+  { icon: <FiTrendingUp />, label: "Pharmacy Solution", path: "/pharmacysolution" },
 ];
 
 const pageLayoutSubItems = [
   { label: "Features", path: "/pagelayout/features" },
   { label: "Revolutionize", path: "/pagelayout/revolutionize" },
   { label: "Tailored", path: "/pagelayout/tailored" },
-  { label: "Sidebar", path: "/pagelayout/sidebar" },
   { label: "Connect", path: "/pagelayout/connect" },
   { label: "Pricing", path: "/pagelayout/pricing" },
   { label: "Discover", path: "/pagelayout/discover" },
   { label: "FAQ", path: "/pagelayout/faq" },
   { label: "Transform", path: "/pagelayout/transform" },
-  { label: "Pharmacy Solution ", path: "/pagelayout/pharmacysolution" },
+  { label: "Pharmacy Solution", path: "/pagelayout/pharmacysolution" },
 ];
 
 const Sidebar = () => {
@@ -41,21 +57,25 @@ const Sidebar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
- 
+
   return (
-    <div className="h-screen w-64 bg-white shadow-md fixed top-0 left-0 overflow-y-auto z-40">
+    <div className="h-screen w-64 bg-gradient-to-br from-gray-50 to-gray-100 shadow-lg fixed top-0 left-0 overflow-y-auto z-40">
       <div className="flex items-center justify-center py-6 border-b border-gray-200">
-        <img src="" alt="Logo" className="h-8" />
+        <div className="h-14 w-14 bg-blue-500 text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">
+          LOGO
+        </div>
       </div>
       <div className="p-4">
         {menuItems.map((item, i) => (
           <Link
             key={i}
             to={item.path}
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 cursor-pointer"
+            className="flex items-center p-4 rounded-lg hover:bg-gray-300 transition-all duration-300 cursor-pointer group"
           >
-            <span className="text-green-500 text-xl">{item.icon}</span>
-            <span className="ml-4 text-gray-700 text-sm font-medium">
+            <span className="text-black text-2xl font-bold group-hover:text-gray-800 transition">
+              {item.icon}
+            </span>
+            <span className="ml-4 text-gray-700 text-sm font-medium group-hover:text-black transition">
               {item.label}
             </span>
           </Link>
@@ -63,25 +83,25 @@ const Sidebar = () => {
         <div className="mt-4">
           <div
             onClick={toggleDropdown}
-            className="flex items-center p-3 rounded-lg hover:bg-gray-100 cursor-pointer"
+            className="flex items-center p-4 rounded-lg hover:bg-gray-100 transition-all duration-300 cursor-pointer group"
           >
-            <span className="text-green-500 text-xl">
-              <FiGrid />
+            <span className="text-black text-2xl font-bold group-hover:text-gray-800 transition">
+              <FiLayers />
             </span>
-            <span className="ml-4 text-gray-700 text-sm font-medium">
+            <span className="ml-4 text-gray-700 text-sm font-medium group-hover:text-black transition">
               Page Layout
             </span>
-            <span className="ml-auto text-gray-500">
+            <span className="ml-auto text-black">
               {isDropdownOpen ? <FiChevronUp /> : <FiChevronDown />}
             </span>
           </div>
           {isDropdownOpen && (
-            <div className="ml-8 mt-2">
+            <div className="ml-6 mt-2">
               {pageLayoutSubItems.map((subItem, index) => (
                 <Link
                   key={index}
                   to={subItem.path}
-                  className="block p-2 rounded-lg hover:bg-gray-100 text-gray-700 text-sm font-medium cursor-pointer"
+                  className="block p-2 rounded-lg hover:bg-gray-300 text-gray-700 text-sm font-medium transition cursor-pointer"
                 >
                   {subItem.label}
                 </Link>
