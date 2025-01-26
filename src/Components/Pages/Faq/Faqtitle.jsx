@@ -1,14 +1,16 @@
-import React, { useState } from "react";
-import JoditEditor from "jodit-react";
+import React from "react";
 import { IoPencil, IoTrash } from "react-icons/io5";
+import JoditEditor from "jodit-react";
 
-const Hero = () => {
-  const banners = [
+const Faqtitle = () => {
+  const faqTitles = [
     {
       id: 1,
-      title: "Optimize Your Pharmacy Operations",
-      subtitle: "Welcome to PharmaEase, where we simplify pharmacy management with cutting-edge solutions.",
-      image: "/background.jpg",
+      title: "What is PharmaEase?",
+      description: "PharmaEase simplifies pharmacy operations with cutting-edge solutions.",
+      headerImage: "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
+      backgroundImage: "https://images.pexels.com/photos/19471016/pexels-photo-19471016/free-photo-of-young-pharmacist-writing-notes.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
+      iconImage: "https://images.pexels.com/photos/4031323/pexels-photo-4031323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", 
     },
   ];
 
@@ -30,35 +32,57 @@ const Hero = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
+
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">HERO SECTION </h1>
-          <p className="mt-2 text-sm">Edit the hero section content below</p>
+          <h1 className="text-3xl font-bold">FAQ Title </h1>
+          <p className="mt-2 text-sm">Manage FAQ Titles, Descriptions, and Images below</p>
         </div>
 
+
         <div className="p-6">
-          <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
+          <h2 className="text-xl font-semibold mb-4 text-gray-700">Add FAQ Title</h2>
           <form className="space-y-6">
+
             <div>
               <label className="block text-gray-600 font-medium mb-1">Title</label>
               <input
                 type="text"
                 name="title"
-                placeholder="Enter your title"
+                placeholder="Enter FAQ title"
                 className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
+
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
               <JoditEditor />
             </div>
+
             <div>
-              <label className="block text-gray-600 font-medium mb-1">Image</label>
+              <label className="block text-gray-600 font-medium mb-1">Header Image</label>
               <input
                 type="file"
                 accept="image/*"
                 className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
               />
             </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Background Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Icon Image</label>
+              <input
+                type="file"
+                accept="image/*"
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+              />
+            </div>
+
             <div className="text-left">
               <button
                 type="button"
@@ -70,40 +94,56 @@ const Hero = () => {
           </form>
         </div>
 
-        <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
-          <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Data</h2>
+        <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
+          <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage FAQ Titles</h2>
           <div className="md:w-11/12 mx-auto">
             <table className="w-full bg-white rounded shadow-lg border-collapse border border-gray-200">
               <thead>
                 <tr className="bg-gray-100 text-gray-700 font-semibold">
                   <th className="p-4 text-left border-b border-gray-200">Title</th>
                   <th className="p-4 text-left border-b border-gray-200">Description</th>
-                  <th className="p-4 text-left border-b border-gray-200">Image</th>
+                  <th className="p-4 text-left border-b border-gray-200">Header Image</th>
+                  <th className="p-4 text-left border-b border-gray-200">Background Image</th>
+                  <th className="p-4 text-left border-b border-gray-200">Icon Image</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {banners.map((banner) => (
-                  <tr key={banner.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200">{banner.title}</td>
-                    <td className="p-4 border-b border-gray-200">{banner.subtitle}</td>
+                {faqTitles.map((faq) => (
+                  <tr key={faq.id} className="hover:bg-gray-50 transition">
+                    <td className="p-4 border-b border-gray-200">{faq.title}</td>
+                    <td className="p-4 border-b border-gray-200">{faq.description}</td>
                     <td className="p-4 border-b border-gray-200">
                       <img
-                        src={banner.image}
-                        alt={banner.title}
+                        src={faq.headerImage}
+                        alt="Header"
+                        className="h-20 w-20 rounded object-cover"
+                      />
+                    </td>
+                    <td className="p-4 border-b border-gray-200">
+                      <img
+                        src={faq.backgroundImage}
+                        alt="Background"
+                        className="h-20 w-20 rounded object-cover"
+                      />
+                    </td>
+                    <td className="p-4 border-b border-gray-200">
+                      <img
+                        src={faq.iconImage}
+                        alt="Icon"
                         className="h-20 w-20 rounded object-cover"
                       />
                     </td>
                     <td className="p-4 flex gap-2 justify-center border-gray-200">
                       <button
-                        onClick={() => handleEditClick(banner.id)}
+                        onClick={() => handleEditClick(faq.id)}
                         className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
                       >
                         <IoPencil />
                         Edit
                       </button>
                       <button
-                        onClick={() => handleDeleteClick(banner.id)}
+                        onClick={() => handleDeleteClick(faq.id)}
                         className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
                       >
                         <IoTrash />
@@ -123,7 +163,7 @@ const Hero = () => {
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
-          <p className="text-lg font-medium mb-4">Are you sure you want to delete this banner?</p>
+          <p className="text-lg font-medium mb-4">Are you sure you want to delete this FAQ?</p>
           <div className="flex justify-center gap-4">
             <button
               onClick={closeModals}
@@ -146,31 +186,46 @@ const Hero = () => {
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
       >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-2xl font-semibold mb-4">Edit Banner</h2>
-          <div className="grid gap-4">
+          <h2 className="text-2xl font-semibold mb-4">Edit FAQ</h2>
+          <form className="space-y-6">
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Title</label>
+              <label className="block text-gray-600 font-medium mb-1">Title</label>
               <input
                 type="text"
-                placeholder="Enter banner title"
+                placeholder="Enter FAQ title"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
+              <label className="block text-gray-600 font-medium mb-1">Description</label>
               <textarea
-                placeholder="Enter banner subtitle"
+                rows="4"
+                placeholder="Enter FAQ description"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              ></textarea>
+              />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Image</label>
+              <label className="block text-gray-600 font-medium mb-1">Header Image</label>
               <input
                 type="file"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-          </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Background Image</label>
+              <input
+                type="file"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label className="block text-gray-600 font-medium mb-1">Icon Image</label>
+              <input
+                type="file"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
               onClick={closeModals}
@@ -191,4 +246,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Faqtitle;

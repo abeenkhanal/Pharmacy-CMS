@@ -19,6 +19,11 @@ import Pricing from "./Components/Pages/Pricing/Pricing";
 import Pricingtitle from "./Components/Pages/Pricing/Pricingtitle";
 import Discover from "./Components/Pages/Discover/Discover";
 import Discovertitle from "./Components/Pages/Discover/Discovertitle";
+import Faq from "./Components/Pages/Faq/Faq";
+import Faqtitle from "./Components/Pages/Faq/Faqtitle";
+import Transform from "./Components/Pages/Transform/Transform";
+import Transformtitle from "./Components/Pages/Transform/Transformtitle";
+import Progressbar from "./Components/Pages/Progressbar/Progressbar";
 
 
 function App() {
@@ -45,6 +50,11 @@ function App() {
             <Route path="/pagelayout/pricing" element={<Pricingtitle/> } /> 
             <Route path="/discover" element={<Discover/> } />
             <Route path="/pagelayout/discover" element={<Discovertitle/> } /> 
+            <Route path="/faq" element={<Faq/> } />
+            <Route path="/pagelayout/faq" element={<Faqtitle/> } /> 
+            <Route path="/transform" element={<Transform/> } />
+            <Route path="/pagelayout/transform" element={<Transformtitle/> } /> 
+            <Route path="/progressbar" element={<Progressbar/> } />
           </Routes>
         </div>
       </div>

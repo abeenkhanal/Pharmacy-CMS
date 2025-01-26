@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 
-const Hero = () => {
+const Transformtitle = () => {
   const banners = [
     {
       id: 1,
-      title: "Optimize Your Pharmacy Operations",
-      subtitle: "Welcome to PharmaEase, where we simplify pharmacy management with cutting-edge solutions.",
-      image: "/background.jpg",
+      title: "Transform Your Pharmacy Operations",
+      subtitle: "Discover a smarter way to manage your pharmacy. From inventory tracking to patient profiles, our software simplifies every aspect of your pharmacy operations.",
+      image: "/about.jpg",
     },
   ];
 
@@ -31,8 +31,8 @@ const Hero = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">HERO SECTION </h1>
-          <p className="mt-2 text-sm">Edit the hero section content below</p>
+          <h1 className="text-3xl font-bold">TRANSFORM </h1>
+          <p className="mt-2 text-sm">Edit the transform section content below</p>
         </div>
 
         <div className="p-6">
@@ -191,4 +191,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Transformtitle;

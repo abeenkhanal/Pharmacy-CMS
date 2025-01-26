@@ -51,13 +51,11 @@ const PricingCMS = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
-        {/* Header */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
           <h1 className="text-3xl font-bold">PRICING PLANS</h1>
           <p className="mt-2 text-sm">Manage your pricing plans below.</p>
         </div>
 
-        {/* Input Section */}
         <div className="p-6 bg-white rounded-lg shadow-md mb-6">
           <h2 className="text-lg font-semibold mb-4">Add New Plan</h2>
           <form className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -89,7 +87,6 @@ const PricingCMS = () => {
           </form>
         </div>
 
-        {/* Plans Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Plans</h2>
           <div className="md:w-11/12 mx-auto">
@@ -138,7 +135,6 @@ const PricingCMS = () => {
         </div>
       </div>
 
-      {/* Edit Modal */}
       {isEditModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 flex">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
@@ -182,7 +178,6 @@ const PricingCMS = () => {
         </div>
       )}
 
-      {/* Delete Confirmation Modal */}
       {isDeleteModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 flex">
           <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">

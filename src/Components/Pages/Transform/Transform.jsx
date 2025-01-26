@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-const Discover = () => {
+const Transform = () => {
   const [points] = useState([
-    "Track inventory with real-time updates",
-    "Manage prescriptions and automate refills",
-    "Generate detailed sales and business reports",
-    "Provide seamless customer service",
+    "Real-time inventory management with low-stock alerts.",
+    "Automated prescription tracking for seamless workflows.",
+    "Comprehensive analytics to drive better decision-making.",
+    "HIPAA-compliant data storage for security and trust.",
+    "Built-in patient management to enhance customer satisfaction",
   ]);
 
   const handleEditClick = () => {
@@ -26,7 +27,7 @@ const Discover = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">POINTS SECTION CMS</h1>
+          <h1 className="text-3xl font-bold">TRANSFORM POINTS SECTION CMS</h1>
           <p className="mt-2 text-sm">Manage the points below</p>
         </div>
 
@@ -145,4 +146,4 @@ const Discover = () => {
   );
 };
 
-export default Discover;
+export default Transform;

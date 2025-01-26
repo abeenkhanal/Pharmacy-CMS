@@ -144,7 +144,6 @@ const Aboutus = () => {
         </div>
       </div>
 
-      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"

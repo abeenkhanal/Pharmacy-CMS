@@ -14,6 +14,9 @@ const menuItems = [
   { icon: <FiGrid />, label: "Connect", path: "/connect" },
   { icon: <FiGrid />, label: "Pricing", path: "/pricing" },
   { icon: <FiGrid />, label: "Discover", path: "/discover" },
+  { icon: <FiGrid />, label: "FAQ", path: "/faq" },
+  { icon: <FiGrid />, label: "Transform", path: "/transform" },
+  { icon: <FiGrid />, label: "Progress Bar", path: "/progressbar" },
 ];
 
 const pageLayoutSubItems = [
@@ -24,6 +27,8 @@ const pageLayoutSubItems = [
   { label: "Connect", path: "/pagelayout/connect" },
   { label: "Pricing", path: "/pagelayout/pricing" },
   { label: "Discover", path: "/pagelayout/discover" },
+  { label: "FAQ", path: "/pagelayout/faq" },
+  { label: "Transform", path: "/pagelayout/transform" },
 ];
 
 const Sidebar = () => {

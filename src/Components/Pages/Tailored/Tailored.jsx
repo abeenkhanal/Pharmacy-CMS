@@ -68,13 +68,11 @@ const Tailored = () => {
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
-        {/* Header Section */}
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
           <h1 className="text-3xl font-bold">Tailored  </h1>
           <p className="mt-2 text-sm">Edit the tailored Section content below</p>
         </div>
 
-        {/* Form Section */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
           <form className="space-y-6">
@@ -110,7 +108,6 @@ const Tailored = () => {
           </form>
         </div>
 
-        {/* Table Section */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -157,7 +154,6 @@ const Tailored = () => {
         </div>
       </div>
 
-      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -198,7 +194,6 @@ const Tailored = () => {
         </div>
       </div>
 
-      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
