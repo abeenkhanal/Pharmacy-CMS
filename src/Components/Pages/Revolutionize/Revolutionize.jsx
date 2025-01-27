@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash } from "react-icons/io5";
 import { FiBox, FiClipboard, FiDollarSign } from "react-icons/fi";
 
 const Revolutionize = () => {
+  const [selectedPreview, setSelectedPreview] = useState(null);
+
   const revolutionizeData = [
     {
       id: 1,
@@ -33,11 +35,14 @@ const Revolutionize = () => {
     document.getElementById("deleteModal").style.display = "flex";
   };
 
-  const closeModals = () => {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach((modal) => {
-      modal.style.display = "none";
-    });
+  const handlePreviewClick = (data) => {
+    setSelectedPreview(data);
+    document.getElementById("previewModal").style.display = "flex";
+  };
+
+  const closePreview = () => {
+    document.getElementById("previewModal").style.display = "none";
+    setSelectedPreview(null);
   };
 
   return (
@@ -95,6 +100,7 @@ const Revolutionize = () => {
                   <th className="p-4 text-left border-b border-gray-200">Title</th>
                   <th className="p-4 text-left border-b border-gray-200">Description</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,12 +127,44 @@ const Revolutionize = () => {
                         </button>
                       </div>
                     </td>
+                    <td className="p-4 border-b border-gray-200 text-center">
+                      <button
+                        onClick={() => handlePreviewClick(data)}
+                        className="px-4 py-2 bg-blue-400 text-white rounded-md flex items-center gap-2 hover:bg-blue-500 transition"
+                      >
+                        Preview
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         </div>
+
+        {/* Preview Modal */}
+        {selectedPreview && (
+          <div
+            id="previewModal"
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          >
+            <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700 text-center">
+                {selectedPreview.title}
+              </h2>
+              <div className="text-center mb-4">{selectedPreview.icon}</div>
+              <p className="text-gray-600 text-center">{selectedPreview.description}</p>
+              <div className="text-center mt-4">
+                <button
+                  onClick={closePreview}
+                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
+                >
+                  Close Preview
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Edit Modal */}
@@ -164,13 +202,13 @@ const Revolutionize = () => {
           </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
             >
               Save Changes
@@ -190,13 +228,13 @@ const Revolutionize = () => {
           </p>
           <div className="flex justify-center gap-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
             >
               Yes
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
