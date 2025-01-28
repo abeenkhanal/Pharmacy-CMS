@@ -10,7 +10,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-const Features = () => {
+const Tailored = () => {
   const featuresData = [
     {
       id: 1,
@@ -274,4 +274,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Tailored;

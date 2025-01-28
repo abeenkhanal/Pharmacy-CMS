@@ -143,6 +143,7 @@ const Revolutionizetitle = () => {
                 </div>
             </div>
 
+            {/* Preview Modal */}
             {selectedPreview && (
                 <div
                     id="previewModal"
