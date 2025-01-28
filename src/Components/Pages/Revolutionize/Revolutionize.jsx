@@ -49,11 +49,10 @@ const Revolutionize = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">Revolutionize CMS</h1>
+          <h1 className="text-3xl font-bold">REVOLUTIONIZE </h1>
           <p className="mt-2 text-sm">Manage your Revolutionize section below</p>
         </div>
 
-        {/* Add New Feature Form */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
           <form className="space-y-6">
@@ -89,7 +88,6 @@ const Revolutionize = () => {
           </form>
         </div>
 
-        {/* Manage Features Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -142,19 +140,18 @@ const Revolutionize = () => {
           </div>
         </div>
 
-        {/* Preview Modal */}
         {selectedPreview && (
           <div
             id="previewModal"
             className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
           >
             <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
-              <h2 className="text-xl font-semibold mb-4 text-gray-700 text-center">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
                 {selectedPreview.title}
               </h2>
               <div className="text-center mb-4">{selectedPreview.icon}</div>
-              <p className="text-gray-600 text-center">{selectedPreview.description}</p>
-              <div className="text-center mt-4">
+              <p className="text-gray-600 text-left">{selectedPreview.description}</p>
+              <div className="text-left mt-4">
                 <button
                   onClick={closePreview}
                   className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
@@ -217,7 +214,6 @@ const Revolutionize = () => {
         </div>
       </div>
 
-      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"

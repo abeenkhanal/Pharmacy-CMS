@@ -35,7 +35,7 @@ const Revolutionizetitle = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
+        <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max  p-8">
             <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
                 <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
                     <h1 className="text-3xl font-bold">REVOLUTIONIZE SECTION</h1>
@@ -51,7 +51,7 @@ const Revolutionizetitle = () => {
                                 type="text"
                                 name="subtitle"
                                 placeholder="Enter your subtitle"
-                                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
                         </div>
 
                         <div>
@@ -60,7 +60,7 @@ const Revolutionizetitle = () => {
                                 type="text"
                                 name="title"
                                 placeholder="Enter your topic title"
-                                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
                         </div>
 
                         <div>
@@ -73,7 +73,7 @@ const Revolutionizetitle = () => {
                             <input
                                 type="file"
                                 accept="image/*"
-                                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"/>
+                                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200" />
                         </div>
 
                         <div className="text-left">
@@ -110,14 +110,13 @@ const Revolutionizetitle = () => {
                                             <img
                                                 src={topic.image}
                                                 alt={""}
-                                                className="h-20 w-20 rounded object-cover"/>
+                                                className="h-20 w-20 rounded object-cover" />
                                         </td>
                                         <td className="p-4 text-center">
                                             <div className="flex gap-2 justify-center">
                                                 <button
                                                     onClick={handleEditClick}
-                                                    className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
- >
+                                                    className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition">
                                                     <IoPencil />
                                                     Edit
                                                 </button>
@@ -144,7 +143,6 @@ const Revolutionizetitle = () => {
                 </div>
             </div>
 
-            {/* Preview Modal */}
             {selectedPreview && (
                 <div
                     id="previewModal"
@@ -157,7 +155,7 @@ const Revolutionizetitle = () => {
                             <img
                                 src={selectedPreview.image}
                                 alt={selectedPreview.title}
-                                className="h-40 w-40 rounded-md  object-cover "/>
+                                className="h-40 w-40 rounded-md  object-cover " />
                         </div>
                         <p className="text-gray-600 text-left">{selectedPreview.description}</p>
                         <div className="text-left mt-4">
@@ -182,27 +180,27 @@ const Revolutionizetitle = () => {
                             <input
                                 type="text"
                                 placeholder="Enter topic subtitle"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Title</label>
                             <input
                                 type="text"
                                 placeholder="Enter topic title"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Description</label>
                             <textarea
                                 rows="4"
                                 placeholder="Enter feature description"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                         <div>
                             <label className="block text-gray-600 font-medium mb-2">Image</label>
                             <input
                                 type="file"
-                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
                         </div>
                     </div>
                     <div className="flex justify-end gap-4 mt-4">
