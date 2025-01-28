@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 
 const Aboutus = () => {
   const banners = [
     {
       id: 1,
       title: "Revolutionize Your Pharmacy Management",
-      subtitle: "At PharmaPro-CRM, we specialize in helping pharmacies streamline their operations, improve efficiency, and deliver exceptional customer service. From inventory tracking to prescription management and customer communications, we provide an all-in-one solution tailored to meet your business needs     ",
+      subtitle:
+        "At PharmaPro-CRM, we specialize in helping pharmacies streamline their operations, improve efficiency, and deliver exceptional customer service. From inventory tracking to prescription management and customer communications, we provide an all-in-one solution tailored to meet your business needs",
       image: "/background.jpg",
     },
   ];
+
+  const [previewData, setPreviewData] = useState(null);
 
   const handleEditClick = (id) => {
     document.getElementById("editModal").style.display = "flex";
@@ -20,11 +23,17 @@ const Aboutus = () => {
     document.getElementById("deleteModal").style.display = "flex";
   };
 
+  const handlePreviewClick = (banner) => {
+    setPreviewData(banner);
+    document.getElementById("previewModal").style.display = "flex";
+  };
+
   const closeModals = () => {
     const modals = document.querySelectorAll(".modal");
     modals.forEach((modal) => {
       modal.style.display = "none";
     });
+    setPreviewData(null);
   };
 
   return (
@@ -72,6 +81,7 @@ const Aboutus = () => {
           </form>
         </div>
 
+        {/* Manage Data Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Data</h2>
           <div className="md:w-11/12 mx-auto">
@@ -82,6 +92,7 @@ const Aboutus = () => {
                   <th className="p-4 text-left border-b border-gray-200">Description</th>
                   <th className="p-4 text-left border-b border-gray-200">Image</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
@@ -96,20 +107,31 @@ const Aboutus = () => {
                         className="h-20 w-20 rounded object-cover"
                       />
                     </td>
-                    <td className="p-4 flex gap-2 justify-center border-gray-200">
+                    <td className="p-4 ">
+                      <div className="flex  gap-2 justify-center items-center">
+                        <button
+                          onClick={() => handleEditClick(banner.id)}
+                          className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
+                        >
+                          <IoPencil />
+                          Edit
+                        </button>
+                        <button
+                          onClick={() => handleDeleteClick(banner.id)}
+                          className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
+                        >
+                          <IoTrash />
+                          Delete
+                        </button>
+                      </div>
+                    </td>
+                    <td className="p-4 border-b border-gray-200 text-center">
                       <button
-                        onClick={() => handleEditClick(banner.id)}
-                        className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
+                        onClick={() => handlePreviewClick(banner)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition"
                       >
-                        <IoPencil />
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDeleteClick(banner.id)}
-                        className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
-                      >
-                        <IoTrash />
-                        Delete
+                        <IoEye />
+                        Preview
                       </button>
                     </td>
                   </tr>
@@ -120,10 +142,10 @@ const Aboutus = () => {
         </div>
       </div>
 
- 
+      {/* Delete Modal */}
       <div
         id="deleteModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
           <p className="text-lg font-medium mb-4">Are you sure you want to delete this banner?</p>
@@ -144,9 +166,10 @@ const Aboutus = () => {
         </div>
       </div>
 
+      {/* Edit Modal */}
       <div
         id="editModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
       >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Banner</h2>
@@ -190,6 +213,35 @@ const Aboutus = () => {
           </div>
         </div>
       </div>
+
+      {/* Preview Modal */}
+      {previewData && (
+        <div
+          id="previewModal"
+          className="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+        >
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 className="text-2xl font-semibold mb-4 text-left">Preview Banner</h2>
+            <div className="text-left">
+              <img
+                src={previewData.image}
+                alt={previewData.title}
+                className="h-40 w-40 rounded  object-cover mb-4"
+              />
+              <h3 className="text-lg font-bold text-left">{previewData.title}</h3>
+              <p className="text-gray-700 text-left mt-2">{previewData.subtitle}</p>
+            </div>
+            <div className="flex justify-start gap-4 mt-4">
+              <button
+                onClick={closeModals}
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
