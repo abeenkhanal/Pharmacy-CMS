@@ -178,7 +178,7 @@ const Features = () => {
               <h3 className="text-lg font-bold">{previewData.title}</h3>
               <p className="text-gray-700 mt-2">{previewData.description}</p>
             </div>
-            <div className="flex justify-end gap-4 mt-4">
+            <div className="flex justify-start gap-4 mt-4">
               <button
                 onClick={closeModals}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
