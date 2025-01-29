@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
 const Revolutionizetitle = () => {
-    const [selectedPreview, setSelectedPreview] = useState(null);
+   
 
     const topics = [
         {
@@ -14,6 +14,7 @@ const Revolutionizetitle = () => {
             image: "/nurse.png",
         },
     ];
+    const [selectedPreview, setSelectedPreview] = useState(null);
 
     const handleEditClick = () => {
         document.getElementById("editModal").style.display = "flex";
@@ -132,6 +133,7 @@ const Revolutionizetitle = () => {
                                             <button
                                                 onClick={() => handlePreviewClick(topic)}
                                                 className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                                                    <IoEye />
                                                 Preview
                                             </button>
                                         </td>
@@ -149,9 +151,13 @@ const Revolutionizetitle = () => {
                     id="previewModal"
                     className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
                     <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
+                    <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
+                            {selectedPreview.subtitle}
+                        </h2>
                         <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
                             {selectedPreview.title}
                         </h2>
+                        
                         <div className="text-center mb-4">
                             <img
                                 src={selectedPreview.image}

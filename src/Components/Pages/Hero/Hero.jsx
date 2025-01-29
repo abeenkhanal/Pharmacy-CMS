@@ -145,7 +145,7 @@ const Hero = () => {
                 alt={previewData.title}
                 className="mt-4 rounded-lg w-full object-cover"/>
             </div>
-            <div className="flex justify-end gap-4 mt-4">
+            <div className="flex justify-start gap-4 mt-4">
               <button
                 onClick={closeModals}
                 className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
@@ -175,7 +175,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">

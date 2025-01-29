@@ -161,14 +161,13 @@ const Discover = () => {
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden" >
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Preview Point</h2>
-          <div className="bg-gray-100 p-4 rounded-lg">
-            <p className="text-gray-700">{previewPoint}</p>
-          </div>
-          <div className="flex justify-end mt-4">
+         
+            <p className="text-gray-700 justify-start">{previewPoint}</p>
+       
+          <div className="flex justify-start mt-4">
             <button
               onClick={closeModals}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
->
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
               Close
             </button>
           </div>

@@ -185,7 +185,7 @@ const Progressbar = () => {
               <div className="text-lg font-medium">Label: {previewData.label}</div>
             </div>
           )}
-          <div className="flex justify-end mt-4">
+          <div className="flex justify-start mt-4">
             <button
               onClick={closeModals}
               className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import JoditEditor from "jodit-react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 import { FaPills, FaPrescriptionBottle, FaUsers } from "react-icons/fa";
 
-const Revolutionize = () => {
-  const revolutionizeData = [
+
+const Pharmacysolution = () => {
+  const [selectedPreview, setSelectedPreview] = useState(null);
+
+  const pharmacysolutionData = [
     {
       id: 1,
       icon: <FaPills className="text-blue-300 text-3xl" />,
@@ -33,22 +36,24 @@ const Revolutionize = () => {
     document.getElementById("deleteModal").style.display = "flex";
   };
 
-  const closeModals = () => {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach((modal) => {
-      modal.style.display = "none";
-    });
+  const handlePreviewClick = (data) => {
+    setSelectedPreview(data);
+    document.getElementById("previewModal").style.display = "flex";
+  };
+
+  const closePreview = () => {
+    document.getElementById("previewModal").style.display = "none";
+    setSelectedPreview(null);
   };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">Revolutionize Pharmacy Management</h1>
-          <p className="mt-2 text-sm">Manage your Pharmacy Management System features below</p>
+          <h1 className="text-3xl font-bold">CONNECT </h1>
+          <p className="mt-2 text-sm">Manage your Connect section below</p>
         </div>
 
-        {/* Add New Feature Form */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
           <form className="space-y-6">
@@ -84,7 +89,6 @@ const Revolutionize = () => {
           </form>
         </div>
 
-        {/* Manage Features Table */}
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md mt-8">
           <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Features</h2>
           <div className="md:w-11/12 mx-auto">
@@ -95,10 +99,11 @@ const Revolutionize = () => {
                   <th className="p-4 text-left border-b border-gray-200">Title</th>
                   <th className="p-4 text-left border-b border-gray-200">Description</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
-                {revolutionizeData.map((data, index) => (
+                {pharmacysolutionData.map((data, index) => (
                   <tr key={index} className="hover:bg-gray-50 transition">
                     <td className="p-4 border-b border-gray-200 text-center">{data.icon}</td>
                     <td className="p-4 border-b border-gray-200">{data.title}</td>
@@ -121,12 +126,43 @@ const Revolutionize = () => {
                         </button>
                       </div>
                     </td>
+                    <td className="p-4 border-b border-gray-200 text-center">
+                      <button
+                        onClick={() => handlePreviewClick(data)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                          <IoEye />
+                        Preview
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         </div>
+
+        {selectedPreview && (
+          <div
+            id="previewModal"
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          >
+            <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
+                {selectedPreview.title}
+              </h2>
+              <div className="text-center mb-4">{selectedPreview.icon}</div>
+              <p className="text-gray-600 text-left">{selectedPreview.description}</p>
+              <div className="text-left mt-4">
+                <button
+                  onClick={closePreview}
+                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
+                >
+                  Close Preview
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Edit Modal */}
@@ -164,13 +200,13 @@ const Revolutionize = () => {
           </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
             >
               Save Changes
@@ -179,7 +215,6 @@ const Revolutionize = () => {
         </div>
       </div>
 
-      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -190,13 +225,13 @@ const Revolutionize = () => {
           </p>
           <div className="flex justify-center gap-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
             >
               Yes
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
@@ -208,4 +243,4 @@ const Revolutionize = () => {
   );
 };
 
-export default Revolutionize;
+export default Pharmacysolution;

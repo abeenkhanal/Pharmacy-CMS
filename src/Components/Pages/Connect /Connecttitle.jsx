@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
 const Connecttitle = () => {
     const [selectedPreview, setSelectedPreview] = useState(null);
@@ -123,7 +123,8 @@ const Connecttitle = () => {
                                         <td className="p-4 text-center">
                                             <button
                                                 onClick={() => handlePreviewClick(topic)}
-                                                className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
+                                                className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                                                    <IoEye />
                                                 Preview
                                             </button>
                                         </td>
