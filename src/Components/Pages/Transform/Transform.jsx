@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
 const Transform = () => {
   const [points] = useState([
@@ -9,12 +10,19 @@ const Transform = () => {
     "Built-in patient management to enhance customer satisfaction",
   ]);
 
+  const [previewPoint, setPreviewPoint] = useState(""); // State to store the point to preview
+
   const handleEditClick = () => {
     document.getElementById("editModal").style.display = "flex";
   };
 
   const handleDeleteClick = () => {
     document.getElementById("deleteModal").style.display = "flex";
+  };
+
+  const handlePreviewClick = (point) => {
+    setPreviewPoint(point); // Set the point to preview
+    document.getElementById("previewModal").style.display = "flex"; // Show the preview modal
   };
 
   const closeModals = () => {
@@ -59,6 +67,7 @@ const Transform = () => {
                 <tr className="bg-gray-100 text-gray-700 font-semibold">
                   <th className="p-4 text-left border-b border-gray-200">Point</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,15 +77,23 @@ const Transform = () => {
                     <td className="p-4 flex gap-2 justify-center">
                       <button
                         onClick={handleEditClick}
-                        className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
-                      >
+                        className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition">
+                          <IoPencil/>
                         Edit
                       </button>
                       <button
                         onClick={handleDeleteClick}
-                        className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
-                      >
+                        className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition">
+                          <IoTrash/>
                         Delete
+                      </button>
+                    </td>
+                    <td className="p-4 text-center">
+                      <button
+                        onClick={() => handlePreviewClick(point)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                          <IoEye/>
+                        Preview
                       </button>
                     </td>
                   </tr>
@@ -87,6 +104,7 @@ const Transform = () => {
         </div>
       </div>
 
+      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
@@ -120,6 +138,7 @@ const Transform = () => {
         </div>
       </div>
 
+      {/* Delete Modal */}
       <div
         id="deleteModal"
         className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
@@ -138,6 +157,27 @@ const Transform = () => {
               className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Preview Modal */}
+      <div
+        id="previewModal"
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
+      >
+        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+          <h2 className="text-2xl font-semibold mb-4">Preview Point</h2>
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <p className="text-gray-700">{previewPoint}</p>
+          </div>
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={closeModals}
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+            >
+              Close
             </button>
           </div>
         </div>

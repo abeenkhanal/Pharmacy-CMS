@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
 const Progressbar = () => {
   const [progressBars] = useState([
@@ -9,12 +9,19 @@ const Progressbar = () => {
     { id: 4, number: "100%", label: "Client Satisfaction" },
   ]);
 
+  const [previewData, setPreviewData] = useState(null); // State to store preview data
+
   const handleEditClick = (id) => {
     document.getElementById("editModal").style.display = "flex";
   };
 
   const handleDeleteClick = (id) => {
     document.getElementById("deleteModal").style.display = "flex";
+  };
+
+  const handlePreviewClick = (bar) => {
+    setPreviewData(bar); 
+    document.getElementById("previewModal").style.display = "flex"; 
   };
 
   const closeModals = () => {
@@ -41,8 +48,7 @@ const Progressbar = () => {
                 type="text"
                 name="number"
                 placeholder="Enter number (e.g., 50+)"
-                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Label</label>
@@ -50,14 +56,12 @@ const Progressbar = () => {
                 type="text"
                 name="label"
                 placeholder="Enter label (e.g., Pharmacies Onboarded)"
-                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             </div>
             <div className="text-left">
               <button
                 type="button"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200"
-              >
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200">
                 Save Changes
               </button>
             </div>
@@ -73,27 +77,34 @@ const Progressbar = () => {
                   <th className="p-4 text-left border-b border-gray-200">Number</th>
                   <th className="p-4 text-left border-b border-gray-200">Label</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
                 {progressBars.map((bar) => (
                   <tr key={bar.id} className="hover:bg-gray-50 transition">
-                    <td className="p-4 border-b border-gray-200">{bar.number}</td>
-                    <td className="p-4 border-b border-gray-200">{bar.label}</td>
+                    <td className="p-4 border-gray-200">{bar.number}</td>
+                    <td className="p-4  border-gray-200">{bar.label}</td>
                     <td className="p-4 flex gap-2 justify-center border-gray-200">
                       <button
                         onClick={() => handleEditClick(bar.id)}
-                        className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
-                      >
+                        className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition">
                         <IoPencil />
                         Edit
                       </button>
                       <button
                         onClick={() => handleDeleteClick(bar.id)}
-                        className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
-                      >
+                        className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition">
                         <IoTrash />
                         Delete
+                      </button>
+                    </td>
+                    <td className="p-4 text-center">
+                      <button
+                        onClick={() => handlePreviewClick(bar)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                          <IoEye />
+                        Preview
                       </button>
                     </td>
                   </tr>
@@ -104,33 +115,31 @@ const Progressbar = () => {
         </div>
       </div>
 
+      {/* Delete Modal */}
       <div
         id="deleteModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
-      >
+        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden">
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
           <p className="text-lg font-medium mb-4">Are you sure you want to delete this progress bar?</p>
           <div className="flex justify-center gap-4">
             <button
               onClick={closeModals}
-              className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-            >
+              className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
               Yes
             </button>
             <button
               onClick={closeModals}
-              className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-            >
+              className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
               Cancel
             </button>
           </div>
         </div>
       </div>
 
+      {/* Edit Modal */}
       <div
         id="editModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden"
-      >
+        className="modal fixed inset-0 bg-black bg-opacity-50  items-center justify-center z-50 hidden">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Progress Bar</h2>
           <form className="space-y-6">
@@ -139,30 +148,48 @@ const Progressbar = () => {
               <input
                 type="text"
                 placeholder="Enter progress bar number"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Label</label>
               <input
                 type="text"
                 placeholder="Enter progress bar label"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
           </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
               onClick={closeModals}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-            >
+              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
               Cancel
             </button>
             <button
               onClick={closeModals}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-            >
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
               Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Preview Modal */}
+      <div
+        id="previewModal"
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+        <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+          <h2 className="text-2xl font-semibold mb-4">Preview</h2>
+          {previewData && (
+            <div className="space-y-4">
+              <div className="text-lg font-medium">Number: {previewData.number}</div>
+              <div className="text-lg font-medium">Label: {previewData.label}</div>
+            </div>
+          )}
+          <div className="flex justify-end mt-4">
+            <button
+              onClick={closeModals}
+              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
+              Close
             </button>
           </div>
         </div>

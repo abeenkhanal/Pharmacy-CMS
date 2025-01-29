@@ -69,26 +69,21 @@ const PricingCMS = () => {
             <input
               type="text"
               placeholder="Plan Name"
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             <input
               type="text"
               placeholder="Monthly Price"
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             <input
               type="text"
               placeholder="Yearly Price"
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             <textarea
               placeholder="Features (comma-separated)"
-              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 col-span-full"
-            ></textarea>
+              className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 col-span-full"></textarea>
             <button
               type="button"
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
-            >
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition">
               Add Plan
             </button>
           </form>
@@ -104,8 +99,9 @@ const PricingCMS = () => {
                   <th className="p-4 text-left border-b border-gray-200">Monthly Price</th>
                   <th className="p-4 text-left border-b border-gray-200">Yearly Price</th>
                   <th className="p-4 text-left border-b border-gray-200">Features</th>
+                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
                   <th className="p-4 text-center border-b border-gray-200">Preview</th>
-                  <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                 
                 </tr>
               </thead>
               <tbody>
@@ -122,15 +118,13 @@ const PricingCMS = () => {
                       <div className="flex gap-2 justify-center items-center">
                         <button
                           onClick={openEditModal}
-                          className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
-                        >
+                          className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition">
                           <IoPencil />
                           Edit
                         </button>
                         <button
                           onClick={openDeleteModal}
-                          className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
-                        >
+                          className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition">
                           <IoTrash />
                           Delete
                         </button>
@@ -139,8 +133,7 @@ const PricingCMS = () => {
                     <td className="p-4 border-b border-gray-200 text-center">
                       <button
                         onClick={() => openPreviewModal(plan)}
-                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition"
-                      >
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
                         <IoEye />
                         Preview
                       </button>
@@ -161,34 +154,28 @@ const PricingCMS = () => {
               <input
                 type="text"
                 placeholder="Plan Name"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
+                className="w-full px-4 py-2 border rounded-lg"/>
               <input
                 type="text"
                 placeholder="Monthly Price"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
+                className="w-full px-4 py-2 border rounded-lg"/>
               <input
                 type="text"
                 placeholder="Yearly Price"
-                className="w-full px-4 py-2 border rounded-lg"
-              />
+                className="w-full px-4 py-2 border rounded-lg"/>
               <textarea
                 placeholder="Features (comma-separated)"
-                className="w-full px-4 py-2 border rounded-lg"
-              ></textarea>
+                className="w-full px-4 py-2 border rounded-lg"></textarea>
             </div>
             <div className="flex justify-end gap-4 mt-4">
               <button
                 onClick={closeModals}
-                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-              >
+                className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
                 Cancel
               </button>
               <button
                 onClick={closeModals}
-                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-              >
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
                 Save Changes
               </button>
             </div>
@@ -205,14 +192,12 @@ const PricingCMS = () => {
             <div className="flex justify-center gap-4">
               <button
                 onClick={closeModals}
-                className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-              >
+                className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
                 Delete
               </button>
               <button
                 onClick={closeModals}
-                className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-              >
+                className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
                 Cancel
               </button>
             </div>
@@ -233,8 +218,7 @@ const PricingCMS = () => {
             <div className="flex justify-end mt-4">
               <button
                 onClick={closeModals}
-                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-              >
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
                 Close
               </button>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 import { FaLightbulb, FaUsers, FaShieldAlt } from 'react-icons/fa';
 
 const Connect = () => {
@@ -128,8 +128,8 @@ const Connect = () => {
                     <td className="p-4 border-b border-gray-200 text-center">
                       <button
                         onClick={() => handlePreviewClick(data)}
-                        className="px-4 py-2 bg-blue-400 text-white rounded-md flex items-center gap-2 hover:bg-blue-500 transition"
-                      >
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                          <IoEye />
                         Preview
                       </button>
                     </td>

@@ -1,8 +1,11 @@
-import React from "react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import React, { useState } from "react";
+import JoditEditor from "jodit-react";
+import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 import { FaBoxes, FaPrescriptionBottle, FaChartLine, FaUserMd, FaLock, FaHeadset } from "react-icons/fa";
 
-const Whyus = () => {
+const Connect = () => {
+  const [selectedPreview, setSelectedPreview] = useState(null);
+
   const revolutionizeData = [
     {
       id: 1,
@@ -50,19 +53,22 @@ const Whyus = () => {
     document.getElementById("deleteModal").style.display = "flex";
   };
 
-  const closeModals = () => {
-    const modals = document.querySelectorAll(".modal");
-    modals.forEach((modal) => {
-      modal.style.display = "none";
-    });
+  const handlePreviewClick = (data) => {
+    setSelectedPreview(data);
+    document.getElementById("previewModal").style.display = "flex";
+  };
+
+  const closePreview = () => {
+    document.getElementById("previewModal").style.display = "none";
+    setSelectedPreview(null);
   };
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">Why Choose Us CMS</h1>
-          <p className="mt-2 text-sm">Manage your "Why Choose Us" section below</p>
+          <h1 className="text-3xl font-bold">WHY US SECTION </h1>
+          <p className="mt-2 text-sm">Manage your Why us section below</p>
         </div>
 
         <div className="p-6">
@@ -79,12 +85,7 @@ const Whyus = () => {
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <textarea
-                name="description"
-                rows="4"
-                placeholder="Enter feature description"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <JoditEditor />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
@@ -115,6 +116,7 @@ const Whyus = () => {
                   <th className="p-4 text-left border-b border-gray-200">Title</th>
                   <th className="p-4 text-left border-b border-gray-200">Description</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
               </thead>
               <tbody>
@@ -141,14 +143,46 @@ const Whyus = () => {
                         </button>
                       </div>
                     </td>
+                    <td className="p-4 border-b border-gray-200 text-center">
+                      <button
+                        onClick={() => handlePreviewClick(data)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition">
+                          <IoEye />
+                        Preview
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
         </div>
+
+        {selectedPreview && (
+          <div
+            id="previewModal"
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
+          >
+            <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
+              <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
+                {selectedPreview.title}
+              </h2>
+              <div className="text-center mb-4">{selectedPreview.icon}</div>
+              <p className="text-gray-600 text-left">{selectedPreview.description}</p>
+              <div className="text-left mt-4">
+                <button
+                  onClick={closePreview}
+                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
+                >
+                  Close Preview
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
+      {/* Edit Modal */}
       <div
         id="editModal"
         className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
@@ -183,13 +217,13 @@ const Whyus = () => {
           </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("editModal").style.display = "none")}
               className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
             >
               Save Changes
@@ -208,13 +242,13 @@ const Whyus = () => {
           </p>
           <div className="flex justify-center gap-4">
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
             >
               Yes
             </button>
             <button
-              onClick={closeModals}
+              onClick={() => (document.getElementById("deleteModal").style.display = "none")}
               className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
             >
               Cancel
@@ -226,4 +260,4 @@ const Whyus = () => {
   );
 };
 
-export default Whyus;
+export default Connect;

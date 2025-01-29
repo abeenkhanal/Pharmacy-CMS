@@ -123,7 +123,7 @@ const Connecttitle = () => {
                                         <td className="p-4 text-center">
                                             <button
                                                 onClick={() => handlePreviewClick(topic)}
-                                                className="px-4 py-2 bg-blue-400 text-white rounded-md flex items-center gap-2 hover:bg-blue-500 transition">
+                                                className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition">
                                                 Preview
                                             </button>
                                         </td>
