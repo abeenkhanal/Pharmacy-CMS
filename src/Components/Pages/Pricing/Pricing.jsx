@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoPencil, IoTrash } from "react-icons/io5";
+import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 
 const PricingCMS = () => {
   const [plans] = useState([
@@ -40,12 +40,19 @@ const PricingCMS = () => {
 
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [isPreviewModalOpen, setPreviewModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
 
   const openEditModal = () => setEditModalOpen(true);
   const openDeleteModal = () => setDeleteModalOpen(true);
+  const openPreviewModal = (plan) => {
+    setSelectedPlan(plan);
+    setPreviewModalOpen(true);
+  };
   const closeModals = () => {
     setEditModalOpen(false);
     setDeleteModalOpen(false);
+    setPreviewModalOpen(false);
   };
 
   return (
@@ -97,6 +104,7 @@ const PricingCMS = () => {
                   <th className="p-4 text-left border-b border-gray-200">Monthly Price</th>
                   <th className="p-4 text-left border-b border-gray-200">Yearly Price</th>
                   <th className="p-4 text-left border-b border-gray-200">Features</th>
+                  <th className="p-4 text-center border-b border-gray-200">Preview</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
                 </tr>
               </thead>
@@ -109,6 +117,7 @@ const PricingCMS = () => {
                     <td className="p-4 border-b border-gray-200">
                       {plan.features.join(", ")}
                     </td>
+                   
                     <td className="p-4 border-b border-gray-200 text-center">
                       <div className="flex gap-2 justify-center items-center">
                         <button
@@ -126,6 +135,15 @@ const PricingCMS = () => {
                           Delete
                         </button>
                       </div>
+                    </td>
+                    <td className="p-4 border-b border-gray-200 text-center">
+                      <button
+                        onClick={() => openPreviewModal(plan)}
+                        className="px-4 py-2 bg-green-500 text-white rounded-md flex items-center gap-2 hover:bg-green-600 transition"
+                      >
+                        <IoEye />
+                        Preview
+                      </button>
                     </td>
                   </tr>
                 ))}
@@ -196,6 +214,28 @@ const PricingCMS = () => {
                 className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
               >
                 Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isPreviewModalOpen && selectedPlan && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 flex">
+          <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h2 className="text-2xl font-semibold mb-4">Preview Plan</h2>
+            <div className="space-y-4">
+              <p><strong>Name:</strong> {selectedPlan.name}</p>
+              <p><strong>Monthly Price:</strong> {selectedPlan.monthlyPrice}</p>
+              <p><strong>Yearly Price:</strong> {selectedPlan.yearlyPrice}</p>
+              <p><strong>Features:</strong> {selectedPlan.features.join(", ")}</p>
+            </div>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={closeModals}
+                className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+              >
+                Close
               </button>
             </div>
           </div>
