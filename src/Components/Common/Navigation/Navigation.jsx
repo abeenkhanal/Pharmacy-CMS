@@ -2,7 +2,7 @@ import React from 'react';
 import { FiSearch, FiBell, FiMail } from 'react-icons/fi';
 const Navigation = () => {
   return (
-    <div className="fixed left-64 top-0 right-0 h-20 bg-white shadow-md z-30 flex items-center justify-between px-6">
+    <div className="fixed left-64 top-0 right-0 h-[104px] bg-white shadow-md z-30 flex items-center justify-between px-6">
       <div className="flex items-center border border-green-300 rounded-full px-4 py-2 w-80">
           <FiSearch className="text-gray-500 text-lg" />
           <input
