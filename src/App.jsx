@@ -28,6 +28,7 @@ import Whyus from "./Components/Pages/Whyus/Whyus";
 import Vision from "./Components/Pages/Vision /Vision";
 import Pharmacysolution from "./Components/Pages/Pharmacysolution/Pharmacysolution";
 import Pharmacysolutiiontitle from "./Components/Pages/Pharmacysolution/Pharmacysolutiiontitle";
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <div className="flex-1 ml-64 mt-20"> 
           <Navigation />
           <Routes>
+           <Route path="/" element={<Dashboard />} />
             <Route path="/hero" element={<Hero />} />
             <Route path="/banner" element={<Banner/>} />
             <Route path="/revolutionize" element={<Revolutionize />} />
