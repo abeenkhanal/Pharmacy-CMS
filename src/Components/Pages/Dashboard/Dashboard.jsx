@@ -7,10 +7,10 @@ import Radarchart from "../Chartsandgraphs/Radarchart/Radarchart";
 import Doughnutchart from "../Chartsandgraphs/Doughnutchart/Doughnutchart";
 import Scatterchart from "../Chartsandgraphs/Scatterchart/Scatterchart";
 import Areachart1 from "../Chartsandgraphs/Areachart1/Areachart1";
-
-
+import Metriccard from "../Chartsandgraphs/Metriccard/Metriccard";
+import Activeusers from "../Chartsandgraphs/Activeusers/Activeuser";
 ChartJS.register(
-  CategoryScale, 
+  CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
@@ -32,42 +32,24 @@ const Dashboard = () => {
           <p className="mt-2">Monitor and manage your pharmacy's performance in one place.</p>
         </div>
       </div>
-
       {/* Metric Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-6">
-        {[
-          { title: "Total Sales", value: "$150K", bg: "bg-blue-500" },
-          { title: "New Users", value: "3,245", bg: "bg-green-500" },
-          { title: "Pending Orders", value: "128", bg: "bg-yellow-500" },
-          { title: "Inventory Value", value: "$75K", bg: "bg-red-500" },
-        ].map((item, idx) => (
-          <div key={idx} className={`${item.bg} text-white p-4 rounded-xl shadow-lg`}>
-            <h2 className="text-sm">{item.title}</h2>
-            <p className="text-3xl font-bold">{item.value}</p>
-          </div>
-        ))}
-      </div>
-
+      <Metriccard />
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <Linechart/>
-        <Scatterchart/>
-        
+        <Linechart />
+        <Scatterchart />
       </div>
-
       {/* Additional Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <Piechart />
         <Radarchart />
-        <Doughnutchart/>
-       
+        <Doughnutchart />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-      
-      <Barchart />
-       
-        <Areachart1/>
+        <Barchart />
+        <Areachart1 />
       </div>
+      <Activeusers/>
     </div>
   );
 };
