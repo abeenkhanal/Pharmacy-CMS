@@ -1,8 +1,13 @@
 import React from "react";
-import { Line, Bar, Pie, Radar } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement, RadialLinearScale } from "chart.js";
+import Linechart from "../Chartsandgraphs/Linechart/Linechart";
+import Barchart from "../Chartsandgraphs/Barchart/Barchart";
+import Piechart from "../Chartsandgraphs/Piechart/Piechart";
+import Radarchart from "../Chartsandgraphs/Radarchart/Radarchart";
+
+
+ChartJS.register(
+  CategoryScale, 
   LinearScale,
   PointElement,
   LineElement,
@@ -11,90 +16,10 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-  RadialLinearScale,
-} from "chart.js";
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  ArcElement,
-  RadialLinearScale,
-  Title,
-  Tooltip,
-  Legend
+  RadialLinearScale
 );
 
 const Dashboard = () => {
-  const lineChartData = {
-    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"],
-    datasets: [
-      {
-        label: "Revenue",
-        data: [12, 19, 10, 15, 22, 30, 25, 35, 28, 40],
-        borderColor: "#6366F1",
-        backgroundColor: "rgba(99, 102, 241, 0.5)",
-      },
-      {
-        label: "Expenses",
-        data: [8, 14, 7, 12, 18, 25, 20, 30, 25, 35],
-        borderColor: "#F59E0B",
-        backgroundColor: "rgba(245, 158, 11, 0.5)",
-      },
-    ],
-  };
-
-  const barChartData = {
-    labels: ["2003", "Feb '03", "Mar '03", "Apr '03", "May '03", "Jun '03"],
-    datasets: [
-      {
-        label: "Desktops",
-        data: [10, 15, 22, 18, 25, 20],
-        backgroundColor: "#6366F1",
-      },
-      {
-        label: "Laptops",
-        data: [5, 12, 17, 12, 18, 15],
-        backgroundColor: "#F59E0B",
-      },
-      {
-        label: "Tablets",
-        data: [3, 8, 10, 9, 12, 10],
-        backgroundColor: "#10B981",
-      },
-    ],
-  };
-
-  const pieChartData = {
-    labels: ["Pharmacy A", "Pharmacy B", "Pharmacy C"],
-    datasets: [
-      {
-        data: [50, 30, 20],
-        backgroundColor: ["#6366F1", "#F59E0B", "#10B981"],
-      },
-    ],
-  };
-
-  const radarChartData = {
-    labels: ["Medicines", "Supplies", "Equipments", "Orders", "Returns"],
-    datasets: [
-      {
-        label: "Current Month",
-        data: [65, 59, 90, 81, 56],
-        backgroundColor: "rgba(99, 102, 241, 0.2)",
-        borderColor: "#6366F1",
-      },
-      {
-        label: "Previous Month",
-        data: [28, 48, 40, 19, 96],
-        backgroundColor: "rgba(245, 158, 11, 0.2)",
-        borderColor: "#F59E0B",
-      },
-    ],
-  };
-
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-8">
       {/* Header Section */}
@@ -122,26 +47,14 @@ const Dashboard = () => {
 
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Monthly Revenue vs Expenses</h2>
-          <Line data={lineChartData} />
-        </div>
-        <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Product Sales by Category</h2>
-          <Bar data={barChartData} />
-        </div>
+        <Linechart/>
+        <Barchart />
       </div>
 
       {/* Additional Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-        <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Pharmacy Distribution</h2>
-          <Pie data={pieChartData} />
-        </div>
-        <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Category Comparisons</h2>
-          <Radar data={radarChartData} />
-        </div>
+        <Piechart />
+        <Radarchart />
         <div className="bg-white shadow-lg rounded-2xl p-6">
           <h2 className="text-lg font-semibold text-gray-700 mb-4">Activity Logs</h2>
           <ul>
