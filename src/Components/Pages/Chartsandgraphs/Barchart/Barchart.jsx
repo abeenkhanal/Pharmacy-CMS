@@ -5,17 +5,17 @@ const barchartData = {
   labels: ["2003", "Feb '03", "Mar '03", "Apr '03", "May '03", "Jun '03"],
   datasets: [
     {
-      label: "Desktops",
+      label: "Paracitamol",
       data: [10, 15, 22, 18, 25, 20],
       backgroundColor: "#6366F1",
     },
     {
-      label: "Laptops",
+      label: "Vitamins",
       data: [5, 12, 17, 12, 18, 15],
       backgroundColor: "#F59E0B",
     },
     {
-      label: "Tablets",
+      label: "Antibiotics",
       data: [3, 8, 10, 9, 12, 10],
       backgroundColor: "#10B981",
     },

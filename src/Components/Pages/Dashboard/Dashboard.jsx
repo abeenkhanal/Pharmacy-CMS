@@ -4,6 +4,9 @@ import Linechart from "../Chartsandgraphs/Linechart/Linechart";
 import Barchart from "../Chartsandgraphs/Barchart/Barchart";
 import Piechart from "../Chartsandgraphs/Piechart/Piechart";
 import Radarchart from "../Chartsandgraphs/Radarchart/Radarchart";
+import Doughnutchart from "../Chartsandgraphs/Doughnutchart/Doughnutchart";
+import Scatterchart from "../Chartsandgraphs/Scatterchart/Scatterchart";
+import Areachart1 from "../Chartsandgraphs/Areachart1/Areachart1";
 
 
 ChartJS.register(
@@ -48,31 +51,22 @@ const Dashboard = () => {
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <Linechart/>
-        <Barchart />
+        <Scatterchart/>
+        
       </div>
 
       {/* Additional Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
         <Piechart />
         <Radarchart />
-        <div className="bg-white shadow-lg rounded-2xl p-6">
-          <h2 className="text-lg font-semibold text-gray-700 mb-4">Activity Logs</h2>
-          <ul>
-            {[
-              "New order placed by Anna",
-              "John updated inventory",
-              "Maria processed a return",
-            ].map((log, idx) => (
-              <li
-                key={idx}
-                className="flex justify-between items-center border-b border-gray-100 py-2"
-              >
-                <p className="text-gray-700">{log}</p>
-                <span className="text-sm text-gray-500">{new Date().toLocaleDateString()}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Doughnutchart/>
+       
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      
+      <Barchart />
+       
+        <Areachart1/>
       </div>
     </div>
   );
