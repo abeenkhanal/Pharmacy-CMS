@@ -36,7 +36,9 @@ function App() {
     <Router>
       <div className="flex">
         <Sidebar />
+        
         <div className="flex-1 ml-64 mt-20"> 
+        
           <Navigation />
           <Routes>
            <Route path="/" element={<Dashboard />} />
@@ -66,9 +68,10 @@ function App() {
             <Route path="/pharmacysolution" element={<Pharmacysolution/> } />
             <Route path="/pagelayout/pharmacysolution" element={<Pharmacysolutiiontitle/> } />
           </Routes>
+          <Footer/>
         </div>
       </div>
-      <Footer/>
+     
     </Router>
   );
 }
