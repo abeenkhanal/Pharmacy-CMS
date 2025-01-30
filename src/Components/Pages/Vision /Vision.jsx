@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 
-const Hero = () => {
+const Vision = () => {
   const banners = [
     {
       id: 1,
@@ -228,4 +228,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Vision;

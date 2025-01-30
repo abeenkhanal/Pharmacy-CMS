@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 
-const PricingCMS = () => {
+const Pricing = () => {
   const [plans] = useState([
     {
       id: 1,
@@ -229,4 +229,4 @@ const PricingCMS = () => {
   );
 };
 
-export default PricingCMS;
+export default Pricing;

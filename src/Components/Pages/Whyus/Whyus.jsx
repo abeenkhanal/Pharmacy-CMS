@@ -3,7 +3,7 @@ import JoditEditor from "jodit-react";
 import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 import { FaBoxes, FaPrescriptionBottle, FaChartLine, FaUserMd, FaLock, FaHeadset } from "react-icons/fa";
 
-const Connect = () => {
+const Whyus = () => {
   const [selectedPreview, setSelectedPreview] = useState(null);
 
   const revolutionizeData = [
@@ -260,4 +260,4 @@ const Connect = () => {
   );
 };
 
-export default Connect;
+export default Whyus;

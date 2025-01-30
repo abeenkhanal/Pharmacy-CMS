@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
-const Discovertitle = () => {
+const Transformtitle = () => {
    
 
     
@@ -234,4 +234,4 @@ const Discovertitle = () => {
     );
 };
 
-export default Discovertitle;
+export default Transformtitle;

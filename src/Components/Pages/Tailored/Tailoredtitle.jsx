@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
 
-const Revolutionizetitle = () => {
+const Tailoredtitle = () => {
    
 
   const banners = [
@@ -239,4 +239,4 @@ const Revolutionizetitle = () => {
     );
 };
 
-export default Revolutionizetitle;
+export default Tailoredtitle;
