@@ -183,7 +183,7 @@ const Pricingtitle = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
+              <label className="block text-gray-600 font-medium mb-2">Description</label>
               <textarea
                 placeholder="Enter banner subtitle"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

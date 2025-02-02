@@ -125,7 +125,7 @@ const Featurestitle = () => {
       {editModalVisible && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Edit Banner</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 text-center">Edit </h2>
             <form className="space-y-6">
               <div>
                 <label className="block text-gray-600 font-medium mb-1">Title</label>

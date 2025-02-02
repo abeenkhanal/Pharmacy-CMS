@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoEye, IoPencil, IoTrash } from "react-icons/io5";
-import { FaPills, FaPrescriptionBottle, FaUsers } from "react-icons/fa";
+import { FaClipboardList, FaPrescriptionBottle, FaFileInvoiceDollar } from "react-icons/fa";
 
 
 const Pharmacysolution = () => {
@@ -9,22 +9,19 @@ const Pharmacysolution = () => {
 
   const pharmacysolutionData = [
     {
-      id: 1,
-      icon: <FaPills className="text-blue-300 text-3xl" />,
-      title: "Advanced Inventory Management",
-      description: "Monitor stock levels in real-time and streamline restocking with automated alerts.",
+      icon: <FaClipboardList className="text-blue-300 text-3xl" />,
+      title: "Real-Time Inventory Management",
+      description: "Keep track of stock levels and reorder seamlessly.",
     },
     {
-      id: 2,
       icon: <FaPrescriptionBottle className="text-blue-300 text-3xl" />,
-      title: "Accurate Prescription Tracking",
-      description: "Manage and track prescriptions efficiently to ensure patient satisfaction.",
+      title: "Secure Prescription Tracking",
+      description: "Ensure accuracy and confidentiality with our system.",
     },
     {
-      id: 3,
-      icon: <FaUsers className="text-blue-300 text-3xl" />,
-      title: "Team Collaboration",
-      description: "Enhance teamwork with tools designed for seamless communication among staff.",
+      icon: <FaFileInvoiceDollar className="text-blue-300 text-3xl" />,
+      title: "Efficient Billing Systems",
+      description: "Streamline your billing process with automated solutions.",
     },
   ];
 
@@ -50,7 +47,7 @@ const Pharmacysolution = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">CONNECT </h1>
+          <h1 className="text-3xl font-bold">PHARMACY SECTION </h1>
           <p className="mt-2 text-sm">Manage your Connect section below</p>
         </div>
 

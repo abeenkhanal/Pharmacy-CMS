@@ -8,9 +8,9 @@ const Discovertitle = () => {
     const topics = [
         {
           id: 1,
-          title: "Revolutionize Your Pharmacy",
-          description: "PharmaEase is committed to transforming pharmacy management through innovative technology and user-friendly solutions.",
-          image: "/nurse.png",
+          title: "Discover Our Pharmacy Management Software",
+          description: "Our comprehensive pharmacy management software helps streamline inventory, manage prescriptions, track sales, and enhance customer satisfaction. Simplify your pharmacy operations and focus on what matters most—providing quality care.",
+          image: "/features.png",
       },
     ];
     

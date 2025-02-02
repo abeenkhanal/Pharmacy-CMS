@@ -163,12 +163,7 @@ const Testimonialstitle = () => {
                 placeholder="Enter banner title"
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-2">Subtitle</label>
-              <textarea
-                placeholder="Enter banner subtitle"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            </div>
+           
           </div>
           <div className="flex justify-end gap-4 mt-4">
             <button
