@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 
-const Banner = () => {
+const Testimonialstitle = () => {
   const banners = [
     {
       id: 1,
-      title: "Experience Pharmacy Management System in Action",
-      subtitle: "Discover how PharmaEase can transform your pharmacy operations. Click below to view a demo and see the benefits firsthand.",
+      title: "What Our Clients Say",
     },
   ];
 
@@ -38,8 +37,8 @@ const Banner = () => {
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
         <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-          <h1 className="text-3xl font-bold">BANNER SECTION</h1>
-          <p className="mt-2 text-sm">Edit the banner section content below</p>
+          <h1 className="text-3xl font-bold"> TESTIMONIALS TITLE SECTION</h1>
+          <p className="mt-2 text-sm">Edit the Testimonials title section content below</p>
         </div>
 
         <div className="p-6">
@@ -53,10 +52,7 @@ const Banner = () => {
                 placeholder="Enter your title"
                 className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <JoditEditor />
-            </div>
+          
             <div className="text-left">
               <button
                 type="button"
@@ -68,13 +64,12 @@ const Banner = () => {
         </div>
 
         <div className="bg-white w-11/12 mx-auto border rounded py-6 shadow-md">
-          <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Banners</h2>
+          <h2 className="text-lg w-11/12 mx-auto font-medium mb-4">Manage Testimonials</h2>
           <div className="md:w-11/12 mx-auto">
             <table className="w-full bg-white rounded shadow-lg border-collapse border border-gray-200">
               <thead>
                 <tr className="bg-gray-100 text-gray-700 font-semibold">
                   <th className="p-4 text-left border-b border-gray-200">Title</th>
-                  <th className="p-4 text-left border-b border-gray-200">Description</th>
                   <th className="p-4 text-center border-b border-gray-200">Actions</th>
                   <th className="p-4 text-center border-b border-gray-200">Preview</th>
                 </tr>
@@ -83,7 +78,6 @@ const Banner = () => {
                 {banners.map((banner) => (
                   <tr key={banner.id} className="hover:bg-gray-50 transition">
                     <td className="p-4 border-b border-gray-200">{banner.title}</td>
-                    <td className="p-4 border-b border-gray-200">{banner.subtitle}</td>
                     <td className="p-4 text-center border-b border-gray-200">
                       <div className="flex gap-2 justify-center items-center">
                         <button
@@ -124,7 +118,6 @@ const Banner = () => {
             <h2 className="text-2xl font-semibold mb-4">Preview</h2>
             <div className="text-left">
               <h3 className="text-lg font-bold">{previewData.title}</h3>
-              <p className="text-gray-700 mt-2">{previewData.subtitle}</p>
             </div>
             <div className="flex justify-start gap-4 mt-4">
               <button
@@ -195,4 +188,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default Testimonialstitle;

@@ -49,6 +49,8 @@ const pageLayoutSubItems = [
   { label: "FAQ", path: "/pagelayout/faq" },
   { label: "Transform", path: "/pagelayout/transform" },
   { label: "Pharmacy Solution", path: "/pagelayout/pharmacysolution" },
+  { label: "Testimonials", path: "/pagelayout/testimonials" },
+
 ];
 
 const Sidebar = () => {

@@ -29,6 +29,7 @@ import Vision from "./Components/Pages/Vision /Vision";
 import Pharmacysolution from "./Components/Pages/Pharmacysolution/Pharmacysolution";
 import Pharmacysolutiiontitle from "./Components/Pages/Pharmacysolution/Pharmacysolutiiontitle";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
+import Testimonialstitle from "./Components/Pages/Testimonials/Testimonialstitle";
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
             <Route path="/features" element={<Features />} />
             <Route path="/pagelayout/features" element={<Featurestitle />} />
             <Route path="/testimonials" element={<Testimonials/>} />
+            <Route path="/pagelayout/testimonials" element={<Testimonialstitle/> } /> 
             <Route path="/aboutus" element={<Aboutus/> } />   
             <Route path="/pagelayout/tailored" element={<Tailoredtitle/> } />  
             <Route path="/tailored" element={<Tailored/> } />  
