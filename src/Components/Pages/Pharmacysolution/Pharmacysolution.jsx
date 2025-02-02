@@ -60,8 +60,7 @@ const Pharmacysolution = () => {
                 type="text"
                 name="title"
                 placeholder="Enter feature title"
-                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              />
+                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
@@ -72,14 +71,12 @@ const Pharmacysolution = () => {
               <input
                 type="file"
                 accept="image/*"
-                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
-              />
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"/>
             </div>
             <div className="text-left">
               <button
                 type="button"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200"
-              >
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200">
                 Save Changes
               </button>
             </div>
@@ -109,15 +106,13 @@ const Pharmacysolution = () => {
                       <div className="flex gap-2 justify-center items-center">
                         <button
                           onClick={handleEditClick}
-                          className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition"
-                        >
+                          className="px-4 py-2 bg-yellow-400 text-white rounded-md flex items-center gap-2 hover:bg-yellow-500 transition">
                           <IoPencil />
                           Edit
                         </button>
                         <button
                           onClick={handleDeleteClick}
-                          className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition"
-                        >
+                          className="px-4 py-2 bg-red-500 text-white rounded-md flex items-center gap-2 hover:bg-red-600 transition">
                           <IoTrash />
                           Delete
                         </button>
@@ -141,8 +136,7 @@ const Pharmacysolution = () => {
         {selectedPreview && (
           <div
             id="previewModal"
-            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-          >
+            className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white w-full max-w-lg p-8 rounded-lg shadow-lg">
               <h2 className="text-xl font-semibold mb-4 text-gray-700 text-left">
                 {selectedPreview.title}
@@ -152,8 +146,7 @@ const Pharmacysolution = () => {
               <div className="text-left mt-4">
                 <button
                   onClick={closePreview}
-                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-                >
+                  className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
                   Close Preview
                 </button>
               </div>
@@ -165,8 +158,7 @@ const Pharmacysolution = () => {
       {/* Edit Modal */}
       <div
         id="editModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
-      >
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
           <h2 className="text-2xl font-semibold mb-4">Edit Feature</h2>
           <form className="space-y-6">
@@ -175,37 +167,32 @@ const Pharmacysolution = () => {
               <input
                 type="text"
                 placeholder="Enter feature title"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
               <textarea
                 rows="4"
                 placeholder="Enter feature description"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
               <input
                 type="file"
                 accept="image/*"
-                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
-              />
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"/>
             </div>
           </form>
           <div className="flex justify-end gap-4 mt-4">
             <button
               onClick={() => (document.getElementById("editModal").style.display = "none")}
-              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-            >
+              className="px-4 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
               Cancel
             </button>
             <button
               onClick={() => (document.getElementById("editModal").style.display = "none")}
-              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
-            >
+              className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition">
               Save Changes
             </button>
           </div>
@@ -214,8 +201,7 @@ const Pharmacysolution = () => {
 
       <div
         id="deleteModal"
-        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden"
-      >
+        className="modal fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
         <div className="bg-white px-6 py-8 rounded shadow-md max-w-sm w-full text-center">
           <p className="text-lg font-medium mb-4">
             Are you sure you want to delete this feature?
@@ -223,14 +209,12 @@ const Pharmacysolution = () => {
           <div className="flex justify-center gap-4">
             <button
               onClick={() => (document.getElementById("deleteModal").style.display = "none")}
-              className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition"
-            >
+              className="px-6 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition">
               Yes
             </button>
             <button
               onClick={() => (document.getElementById("deleteModal").style.display = "none")}
-              className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition"
-            >
+              className="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition">
               Cancel
             </button>
           </div>
