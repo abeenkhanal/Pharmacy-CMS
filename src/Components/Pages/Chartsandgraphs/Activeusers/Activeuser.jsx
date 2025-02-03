@@ -63,8 +63,7 @@ const Activeusers = () => {
           {users.map((user, index) => (
             <tr
               key={index}
-              className="border-t hover:bg-gray-100 transition duration-150"
-            >
+              className="border-t hover:bg-gray-100 transition duration-150">
               <td className="p-3">{user.id}</td>
               <td className="p-3 flex items-center space-x-3">
                 <img src={user.image} alt={user.name} className="w-10 h-10 rounded-full" />
@@ -76,8 +75,7 @@ const Activeusers = () => {
               <td className="p-3">{user.city}</td>
               <td className="p-3">
                 <span
-                  className={`px-3 py-1 text-white text-sm rounded-full ${user.statusColor}`}
-                >
+                  className={`px-3 py-1 text-white text-sm rounded-full ${user.statusColor}`}>
                   {user.status}
                 </span>
               </td>

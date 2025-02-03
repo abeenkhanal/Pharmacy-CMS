@@ -8,8 +8,7 @@ const Navigation = () => {
           <input
             type="text"
             placeholder="Search here..."
-            className="ml-3 bg-transparent outline-none w-full text-gray-700 placeholder-gray-400"
-          />
+            className="ml-3 bg-transparent outline-none w-full text-gray-700 placeholder-gray-400"/>
         </div>
       <div className="flex items-center space-x-4">
       <FiBell className="text-gray-500 text-xl cursor-pointer relative">
@@ -21,8 +20,7 @@ const Navigation = () => {
         <img
           src="https://images.pexels.com/photos/20230634/pexels-photo-20230634/free-photo-of-model-posing-in-white-sweater.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="User"
-          className="w-8 h-8 rounded-full"
-        />
+          className="w-8 h-8 rounded-full"/>
       </div>
     </div>
   );
