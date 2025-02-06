@@ -63,8 +63,8 @@ const Sidebar = () => {
   return (
     <div className="h-screen w-64 bg-gradient-to-br from-gray-50 to-gray-100 shadow-lg fixed top-0 left-0 overflow-y-auto z-40">
       <div className="flex items-center justify-center py-6 border-b border-gray-200">
-        <div className="h-14 w-14 bg-blue-500 text-white text-lg font-bold rounded-full flex items-center justify-center shadow-lg">
-          LOGO
+        <div className="h-14 w-24  text-white text-lg font-bold rounded-full flex items-center justify-center ">
+          <img src="./mainlogo.png" alt="" />
         </div>
       </div>
       <div className="p-4">
