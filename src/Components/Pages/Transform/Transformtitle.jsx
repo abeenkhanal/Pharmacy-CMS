@@ -40,14 +40,14 @@ const Transformtitle = () => {
         <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max  p-8">
             <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
                 <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg mb-6">
-                    <h1 className="text-3xl font-bold">TRANSFORMED SECTION</h1>
+                    <h1 className="text-3xl font-bold">TRANSFORMED TITLE SECTION </h1>
                     <p className="mt-2 text-sm">Edit the transformed content below</p>
                 </div>
 
                 <div className="p-6">
                     <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
                     <form className="space-y-6">
-                       
+                        
 
                         <div>
                             <label className="block text-gray-600 font-medium mb-1">Title</label>
