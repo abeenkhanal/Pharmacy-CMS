@@ -30,12 +30,14 @@ import Pharmacysolution from "./Components/Pages/Pharmacysolution/Pharmacysoluti
 import Pharmacysolutiiontitle from "./Components/Pages/Pharmacysolution/Pharmacysolutiiontitle";
 import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 import Testimonialstitle from "./Components/Pages/Testimonials/Testimonialstitle";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
   return (
     <Router>
       <div className="flex">
+        <ToastContainer />
         <Sidebar />
         
         <div className="flex-1 ml-64 mt-20"> 
