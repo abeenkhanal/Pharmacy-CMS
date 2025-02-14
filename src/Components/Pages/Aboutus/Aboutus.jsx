@@ -1,18 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
-
+  
 const Aboutus = () => {
-  const banners = [
-    {
-      id: 1,
-      title: "Revolutionize Your Pharmacy Management",
-      subtitle:
-        "At PharmaPro-CRM, we specialize in helping pharmacies streamline their operations, improve efficiency, and deliver exceptional customer service. From inventory tracking to prescription management and customer communications, we provide an all-in-one solution tailored to meet your business needs",
-      image: "/background.jpg",
-    },
-  ];
 
+  const [banners, setBanners] = useState([]);
   const [previewData, setPreviewData] = useState(null);
 
   const handleEditClick = (id) => {
@@ -35,6 +27,12 @@ const Aboutus = () => {
     });
     setPreviewData(null);
   };
+
+  // useEffect(() => {
+  //   axios.get("/aboutsection").then(res => {
+  //     setBanners(res.data)
+  //   }).catch(err => {console.log(err)})
+  // }, [])
 
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
@@ -96,10 +94,10 @@ const Aboutus = () => {
                 {banners.map((banner) => (
                   <tr key={banner.id} className="hover:bg-gray-50 transition">
                     <td className="p-4 border-b border-gray-200">{banner.title}</td>
-                    <td className="p-4 border-b border-gray-200">{banner.subtitle}</td>
+                    <td className="p-4 border-b border-gray-200">{banner.description}</td>
                     <td className="p-4 border-b border-gray-200">
                       <img
-                        src={banner.image}
+                        src={banner.image.image}
                         alt={banner.title}
                         className="h-20 w-20 rounded object-cover"/>
                     </td>

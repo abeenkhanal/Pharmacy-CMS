@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement, RadialLinearScale } from "chart.js";
 import Linechart from "../Chartsandgraphs/Linechart/Linechart";
 import Barchart from "../Chartsandgraphs/Barchart/Barchart";
@@ -9,6 +9,7 @@ import Scatterchart from "../Chartsandgraphs/Scatterchart/Scatterchart";
 import Areachart1 from "../Chartsandgraphs/Areachart1/Areachart1";
 import Metriccard from "../Chartsandgraphs/Metriccard/Metriccard";
 import Activeusers from "../Chartsandgraphs/Activeusers/Activeuser";
+import axios from "axios";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -22,7 +23,20 @@ ChartJS.register(
   RadialLinearScale
 );
 
+
+
 const Dashboard = () => {
+
+  useEffect(() => {
+   
+    axios.get(import.meta.env.VITE_API_URL + '/revolutionize').then(res => {
+        console.log(1)
+        console.log(res.data)
+        
+      }).catch(err => {console.log(err)})
+
+  }, [])
+
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-8">
       {/* Header Section */}

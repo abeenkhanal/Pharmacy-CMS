@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
-import { UseBannerService } from "../../../Service/BannerService";
 
 const Banner = () => {
-  const { form, onSubmit } = UseBannerService();
-  const errorMessage = form.formState.errors;
+
 
   const banners = [
     {
@@ -48,24 +46,20 @@ const Banner = () => {
 
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Edit Content</h2>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <form className="space-y-6">
             <div>
               <label className="block text-gray-600 font-medium mb-1">Title</label>
               <input
                 type="text"
                 name="title"
                 placeholder="Enter your title"
-                {...form.register("title")}
                 className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
-                {errorMessage.title && <span className="text-red-500">{errorMessage.title.message}</span>}
+               
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <JoditEditor 
-              value={form.watch('description')}
-              onChange={(newContent) => form.setValue('description', newContent)}
-               /> 
-              {errorMessage.description && <span className="text-red-500">{errorMessage.description.message}</span>}
+              <JoditEditor /> 
+             
             </div>
             <div className="text-left">
               <button

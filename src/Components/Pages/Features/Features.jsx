@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import JoditEditor from "jodit-react";
 import { IoPencil, IoTrash, IoEye } from "react-icons/io5";
 import { FaPills, FaFilePrescription, FaUsers, FaChartBar, FaCogs, FaTruck } from "react-icons/fa";
+import { Field, Form, Formik } from 'formik';
+import values from '../../../../../node_modules/lodash-es/values';
+
 
 const Features = () => {
+
+
   const featuresData = [
     {
       id: 1,
@@ -66,6 +71,21 @@ const Features = () => {
     setPreviewData(null);
   };
 
+  const [Package, setPackage] = useState([])
+
+  const getdata = () => {
+    try {
+        axios.get(`http://localhost:4000/courses/${params.id}`).then(Res => {
+            setPackage([Res.data.result])
+        }).catch(err => {
+            console.log(err)
+        })
+    } catch {
+        console.log
+    }
+
+}
+
   return (
     <div className="bg-gradient-to-br from-blue-50 to-gray-100 h-max p-8">
       <div className="w-full bg-white shadow-xl rounded-lg overflow-hidden p-8">
@@ -77,34 +97,59 @@ const Features = () => {
         {/* Add New Feature Section */}
         <div className="p-6">
           <h2 className="text-xl font-semibold mb-4 text-gray-700">Add New Feature</h2>
-          <form className="space-y-6">
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">Title</label>
-              <input
-                type="text"
-                name="title"
-                placeholder="Enter feature title"
-                className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"/>
-            </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">Description</label>
-              <JoditEditor />
-            </div>
-            <div>
-              <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
-              <input
-                type="file"
-                accept="image/*"
-                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"/>
-            </div>
-            <div className="text-left">
-              <button
-                type="button"
-                className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200">
-                Save Changes
-              </button>
-            </div>
-          </form>
+          <Formik initialValues={{ title: '', description: '', image: '' }}
+            onSubmit={(values,) => {
+              try  { const formData = new FormData()
+                  axios.post('', formData ).then((res) => { 
+                    console.log(res)
+                    toast.success('Feature added successfully')
+                  } ).catch(err => {
+                    console.log(err)
+                })
+            } catch (error) {
+                console.log(error)
+            }
+             
+            }}
+          >
+            {({ setFieldValue, handleSubmit }) => {
+              return <Form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-gray-600 font-medium mb-1">Title</label>
+                  <Field
+                    type="text"
+                    name="title"
+                    placeholder="Enter feature title"
+                    className="px-4 py-2 border w-full max-w-md border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" />
+
+                </div>
+                <div>
+                  <label className="block text-gray-600 font-medium mb-1">Description</label>
+                  <JoditEditor
+
+                  />
+                </div>
+                <div>
+                  <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
+                  <input onChange={(e) => setFieldValue('image', e.target.files[0])}
+                    type="file"
+                    accept="image/*"
+                    className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"
+
+                  />
+                </div>
+                <div className="text-left">
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-6 py-2 rounded-lg shadow hover:bg-blue-600 transition duration-200">
+                    Save Changes
+                  </button>
+                </div>
+              </Form>
+            }}
+
+          </Formik>
+
         </div>
 
         {/* Manage Features Table */}
@@ -122,7 +167,7 @@ const Features = () => {
                 </tr>
               </thead>
               <tbody>
-                {featuresData.map((data) => (
+                {Package.map((data) => (
                   <tr key={data.id} className="hover:bg-gray-50 transition">
                     <td className="p-4 border-b border-gray-200 text-center">{data.icon}</td>
                     <td className="p-4 border-b border-gray-200">{data.title}</td>
@@ -215,22 +260,22 @@ const Features = () => {
               <input
                 type="text"
                 placeholder="Enter feature title"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Description</label>
               <textarea
                 placeholder="Enter feature description"
                 rows="4"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">    
-                </textarea>
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </textarea>
             </div>
             <div>
               <label className="block text-gray-600 font-medium mb-1">Upload Icon</label>
               <input
                 type="file"
                 accept="image/*"
-                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200"/>
+                className="block text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-600 hover:file:bg-blue-200" />
             </div>
           </form>
           <div className="flex justify-end gap-4 mt-4">
